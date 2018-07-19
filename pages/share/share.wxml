@@ -1,0 +1,38 @@
+<import src="../head/head.wxml"></import>
+<template is="tabhead" data="{{headheight:headheight}}"></template>
+<view class="wrap" style="top:{{headheight}}px">
+    <image class="bg" src="../../images/sharebg.png"></image>
+    <view class="titles" style="top:{{headheight}}rpx">
+        <view class="title1">我发起了组团抽奖</view>
+        <view class="title2">
+            <text>一个人中奖，团中所有人都将获得相同奖品</text>
+        </view>
+    </view>
+    <view class="content" style="top:{{headheight+204}}rpx">
+        <view class="prizemsg">
+            <image src="{{info.imgurl}}"></image>
+            <view class="prizewrap">
+                <view class="prizecof" wx:if="{{info.fir_ptype==0}}">奖品：{{info.fir_val}}</view>
+                <view class="prizecof" wx:elif="{{info.fir_ptype==1}}">红包：{{info.fir_val}}元</view>
+                <view class="prizecof" wx:else>电子卡：{{info.fir_cname}}</view>
+                <view class="condition" wx:if="{{info.type==1}}">{{info.typevalue}}自动开奖</view>
+                <view class="condition" wx:elif="{{info.type==2}}">参与人数达到{{info.typevalue}}人自动开奖</view>
+                <view class="condition" wx:else>由发起者手动开奖</view>
+            </view>
+        </view>
+        <view class="groupmsg" style="margin-top:{{headheight+26}}rpx">
+            <view class="groupnum">
+        已有<text>{{info.group.apply_num}}</text>人组队 最多{{info.max_group_num}}人
+      </view>
+            <view class="grouplist">
+                <view class="groupli" wx:for="{{info.group.apply}}">
+                    <image src="{{item.user_img}}"></image>
+                    <view class="nick">{{item.nickname}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="share" style="bottom:{{headheight*2+40}}rpx">
+        <button data-sha="group" openType="share">邀好友组队</button>
+    </view>
+</view>

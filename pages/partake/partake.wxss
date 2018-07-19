@@ -1,0 +1,428 @@
+.head {
+    background-color: #FFF;
+    padding: 20rpx;
+}
+
+.prizepho {
+    height: 350rpx;
+    position: relative;
+}
+
+.prizepho image {
+    width: 100%;
+    height: 350rpx;
+    display: block;
+    position: relative;
+}
+
+.sponsor-zans {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 60rpx;
+    line-height: 60rpx;
+    background: rgba(0,0,0,0.30);
+    font-size: 24rpx;
+    color: #FFFFFF;
+    padding: 0 30rpx;
+    border-bottom-left-radius: 8rpx;
+}
+
+.prizecs {
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prizecs .prizecof {
+    font-size: 34rpx;
+    color: #000000;
+}
+
+.prizeLi {
+    font-size: 28rpx;
+    color: #999999;
+    flex: 1;
+    text-align: right;
+}
+
+.condition {
+    font-size: 24rpx;
+    color: #B3B3B3;
+    margin-top: 20rpx;
+}
+
+.mode {
+    height: 70rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20rpx;
+    background-color: #FAFAFA;
+    font-size: 24rpx;
+    color: #949494;
+    border-top: 1px dashed #cccccc;
+    box-shadow: 0 1px 12rpx 0 rgba(149,135,134,0.20);
+}
+
+.mode .sponsor text {
+    margin: 0 6rpx;
+    font-weight: bold;
+}
+
+.mode .copyname image {
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: 8rpx;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+
+.jump {
+    color: #333;
+}
+
+.jump image {
+    width: 26rpx;
+    height: 26rpx;
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-left: 8rpx;
+}
+
+.jump .next {
+    width: 10rpx;
+    height: 10rpx;
+    display: inline-block;
+    border-top: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+    transform: rotate(45deg);
+}
+
+.padd {
+    padding: 0 20rpx;
+}
+
+.remarks {
+    background-color: #F6DFC7;
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+    margin-top: 60rpx;
+    border-radius: 10rpx;
+    color: #9C8064;
+    font-size: 32rpx;
+    padding-left: 30rpx;
+}
+
+.partake,.parSuccess {
+    padding-top: 70rpx;
+}
+
+.partake button {
+    width: 455rpx;
+    background-color: #FE5A50;
+    font-size: 34rpx;
+    color: #FFFFFF;
+    height: 120rpx;
+    line-height: 120rpx;
+    background-image: linear-gradient(-180deg,#F95F62 0%,#CF0F0A 100%);
+    box-shadow: 0 11rpx 0 -1px #B21A17;
+}
+
+.parSuccess button {
+    height: 120rpx;
+    line-height: 120rpx;
+    font-size: 34rpx;
+    width: 455rpx;
+    background: #F07575;
+    color: #FFFFFF;
+    font-weight: bold;
+    position: relative;
+}
+
+.successIcon {
+    position: absolute;
+    top: 50rpx;
+    left: 310rpx;
+    display: block;
+}
+
+.successIcon::after {
+    content: '';
+    display: inline-block;
+    width: 20rpx;
+    height: 2px;
+    background-color: #666;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 16rpx;
+    left: 0;
+}
+
+.successIcon::before {
+    content: '';
+    display: inline-block;
+    width: 36rpx;
+    height: 2px;
+    background-color: #666;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 10rpx;
+    left: 10rpx;
+}
+
+.moreluck {
+    font-size: 24rpx;
+    color: #FE5A50;
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 40rpx;
+}
+
+.group {
+    display: flex;
+    margin-top: 70rpx;
+    align-items: center;
+}
+
+.group .btn1 {
+    height: 120rpx;
+    line-height: 120rpx;
+    font-size: 34rpx;
+    width: 455rpx;
+    background: #F07575;
+    color: #FFFFFF;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.groupxian {
+    width: 120rpx;
+    color: #F07575;
+    letter-spacing: 6rpx;
+    flex-shrink: 0;
+}
+
+.group .groupBtn {
+    background-image: linear-gradient(-180deg,#F95F62 0%,#CF0F0A 100%);
+    width: 400rpx;
+    height: 120rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    color: #FFF;
+    flex-shrink: 0;
+}
+
+.groupjoin {
+    background-image: linear-gradient(-180deg,#F95F62 0%,#CF0F0A 100%);
+    width: 400rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    margin: 70rpx auto 0;
+}
+
+.groupjoin button {
+    height: 140rpx;
+    background-color: transparent;
+    color: #FFF;
+    line-height: 30rpx;
+}
+
+.groupjoin .ones {
+    font-size: 34rpx;
+    margin-top: 40rpx;
+}
+
+.groupjoin .twos {
+    font-size: 22rpx;
+    opacity: .6;
+    margin-top: 10rpx;
+}
+
+.groupBtn button {
+    height: 120rpx;
+    line-height: 120rpx;
+    background-color: transparent;
+    color: #FFF;
+    font-size: 34rpx;
+}
+
+.groupBtn .v1 {
+    font-size: 34rpx;
+    margin-top: 20rpx;
+}
+
+.groupBtn .v2 {
+    font-size: 22rpx;
+    opacity: .6;
+    margin-top: 10rpx;
+}
+
+.groupadd {
+    margin-top: 40rpx;
+    padding: 0 20rpx;
+}
+
+.groupfull {
+    color: #FE5A50;
+    font-size: 24rpx;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+
+.groupfull .icon {
+    width: 25rpx;
+    height: 25rpx;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #FE5A50;
+    vertical-align: middle;
+    font-size: 20rpx;
+    color: #FFF;
+    line-height: 25rpx;
+    margin-top: -3px;
+    margin-right: 6rpx;
+}
+
+.groupnum {
+    border: 1px solid #B21A17;
+    border-radius: 8rpx;
+    padding: 20rpx;
+}
+
+.groupnum .groupv1 {
+    text-align: center;
+    color: #999;
+    font-size: 24rpx;
+}
+
+.groupv1::before,.groupv1::after {
+    content: '';
+    display: inline-block;
+    width: 170rpx;
+    height: 1px;
+    background-color: #F1D0CD;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+
+.groupv1::before {
+    margin-right: 10rpx;
+}
+
+.groupv1::after {
+    margin-left: 10rpx;
+}
+
+.groupv1 text {
+    color: red;
+}
+
+.grouplist {
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.grouplist image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+    margin-top: 20rpx;
+}
+
+.card {
+    padding: 30rpx;
+    background-color: #FAFAFA;
+    border-top: 1px dashed #CCCCCC;
+}
+
+.cardwrap {
+    display: flex;
+}
+
+.cardwrap:nth-of-type(2) {
+    margin-top: 30rpx;
+}
+
+.cardsmg {
+    flex: 1;
+    height: 88rpx;
+    line-height: 88rpx;
+    border: 1px dashed #CCCCCC;
+    background-color: #F5F5F5;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    text-align: left;
+    padding-left: 10rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cardsmg .label {
+    color: #999999;
+    margin-right: 20rpx;
+}
+
+.cardsmg .num {
+    font-weight: bold;
+    color: #333;
+}
+
+.cardcopy {
+    height: 88rpx;
+    line-height: 88rpx;
+    margin-left: 40rpx;
+    font-size: 24rpx;
+    color: #CCC;
+}
+
+.havepart {
+    margin-top: 40rpx;
+    text-align: center;
+}
+
+.havenum {
+    font-size: 24rpx;
+    color: #B3B3B3;
+}
+
+.havenum text {
+    margin: 0 6rpx;
+    font-weight: bold;
+}
+
+.partImg {
+    padding: 0 100rpx;
+    display: flex;
+    margin-top: 20rpx;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.partImg image {
+    width: 60rpx;
+    height: 60rpx;
+    display: block;
+    margin-right: 20rpx;
+}
+
+.explain {
+    background-color: #FFF;
+    padding: 30rpx;
+    margin-top: 40rpx;
+}
+
+.explain .explainTitle {
+    text-align: center;
+    color: #9F9494;
+    font-size: 28rpx;
+}
+
+.explainTitle::before,.explainTitle::after {
+    content: '\\\\\\\\\\\\\\\\';display:inline-block;opacity:0.3;font-size:22rpx;letter-spacing:6rpx}.explainTitle::before{margin-right:30rpx}.explainTitle::after{margin-left:30rpx}.explaincs{margin-top:40rpx;color:#666666;font-size:32rpx;line-height:50rpx}.footer{display:flex;align-items:center;width:100%;position:fixed;bottom:0;left:0;height:120rpx;box-shadow:0 2rpx 7rpx 0 rgba(0,0,0,0.50);background-color:#FFF;z-index:2}.footer view{width:240rpx;background:#FFFFFF;border-radius:4rpx;height:80rpx;line-height:80rpx;border:1rpx solid #F07575;color:#F07575;font-size:28rpx;text-align:center}.footer .footerLeft{height:80rpx;margin-left:20rpx}.footerLeft button{width:240rpx;background:#FFFFFF;border-radius:4rpx;height:80rpx;line-height:80rpx;border:1px solid #F07575;color:#F07575;font-size:28rpx}.footer .invitation{flex:1;height:84rpx;margin-right:20rpx;margin-left:20rpx}.invitation button{height:84rpx;line-height:84rpx;background:#FE5A50;color:#FFF;font-size:28rpx;border-radius:4rpx}.actCalne{background-color:#FFF;padding:10px;text-align:center;color:#B3B3B3}.winning{background-color:#FFF;text-align:center;padding-top:40rpx;position:relative}.nowinn{padding-bottom:30rpx}.winning .share{position:absolute;top:20rpx;right:20rpx}.share image{width:30rpx;height:34rpx;display:block}.winnIcons{margin-bottom:10px}.winnIcons image{width:127rpx;height:103rpx;display:block;margin:0 auto 30rpx}.winnIcons text{text-shadow:0 1px 2rpx rgba(195,94,94,0.50);font-size:34rpx;color:#FE5A50}.winnprize{padding-top:30rpx;text-align:center;border-top:1px dashed #CCCCCC;margin-top:40rpx}.winnprize .confione{font-size:24rpx;color:#B3B3B3}.confione text{font-weight:bold;margin:0 10rpx}.winnprize .confitwo{font-size:34rpx;color:#333333;margin-top:10rpx;font-weight:bold}.marginBo{padding-bottom:30rpx}.address{height:80rpx;line-height:80rpx;font-size:24rpx;color:#F07575;background-color:#FAFAFA;border-top:1px dashed #CCCCCC}.winningList{margin-top:30rpx;padding:20px 20px 10px;background-color:#FFF;box-shadow:0 1px 6px 0 rgba(149,135,134,0.20)}.winnTilte{width:150px;height:30px;line-height:30px;background-color:#F0F0F0;font-size:15px;color:#9F9494;text-align:center;margin:auto;position:relative;margin-bottom:15px}.winnTilte::before{content:'';display:block;width:0;height:0;border-width:15px;border-style:solid;border-color:transparent #FFF transparent transparent;position:absolute;right:0;top:0}.winnTilte::after{content:'';display:block;width:0;height:0;border-width:15px;border-style:solid;border-color:transparent transparent transparent #FFF;position:absolute;left:0;top:0}.winnli{margin-bottom:20rpx;color:#9F9494;font-size:22rpx}.winnliN1{display:flex;align-items:center}.winnli image{width:50rpx;height:50rpx;border-radius:50%;flex-shrink:0;margin-right:20rpx}.winnliN1 .gropimg{width:30rpx;height:30rpx;border-radius:0;margin-left:20rpx}.winnli .prizeName{margin-left:auto;margin-right:0}.winnliN2{color:#9F9494;margin-top:10rpx}.addreflex{display:flex;align-items:center}.add-flex1{margin-right:20rpx;flex:1}.add-flex2{flex-shrink:0;font-size:28rpx}.add-flex2 image{width:24rpx;height:24rpx;margin-right:10rpx;border-radius:0}.thankcy{background:#FAFAFA;border-radius:0 0 5px 5px;border-top:1px dashed #CCCCCC;height:35px;line-height:35px;text-align:center;font-size:12px;color:#B3B3B3;box-shadow:0 1px 6px 0 rgba(149,135,134,0.20)}.thankcy text{margin:0 6rpx;font-weight:bold}.shareLayer{position:fixed;z-index:999;background-color:#FFF;width:100%;left:0;bottom:0;text-align:center}.shareLi{height:50px;line-height:50px;font-size:16px}.shareLi button{height:50px;line-height:50px;font-size:16px;background-color:#FFF;border-bottom:1px solid #DDD;border-radius:0}.layer{width:100%;height:100%;position:fixed;left:0;bottom:0;z-index:9999;background:rgba(0,0,0,0.30)}.layerWrap{z-index:10000;width:70%;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:10px;text-align:center;padding-top:140rpx}.layerclose{position:absolute;width:40rpx;height:40rpx;border-radius:50%;border:1px solid #EEE;top:-30rpx;right:0;z-index:1}.layerclose::after,.layerclose::before{content:'';display:block;width:26rpx;height:2rpx;background-color:#FFF;position:absolute;left:8rpx;top:20rpx}.layerclose::after{transform:rotate(45deg)}.layerclose::before{transform:rotate(-45deg)}.layerWrap .headimg{width:100%;height:255rpx;display:block;position:absolute;top:-100rpx;left:0}.layermsg{background-color:#FFF;padding:30rpx 80rpx}.layermsg image{width:100%;height:175rpx;display:block}.layermsg .namesa{font-size:28rpx;color:#000000;font-weight:bold;text-align:left;margin-top:10rpx}.layerfoor{margin:50rpx auto 0;background:#EB2B39;width:307rpx;height:88rpx;line-height:88rpx;text-align:center;font-size:32rpx;color:#FFFFFF;border-radius:100rpx}.explain2 .mode{border-top:none}

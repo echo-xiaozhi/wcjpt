@@ -1,0 +1,61 @@
+<import src="../head/head.wxml"></import>
+<template is="tabhead" data="{{headtxt:headtxt,headheight:headheight}}"></template>
+<view class="head">
+    <image class="headbg" src="../../images/mybg.png"></image>
+    <view class="user-msg">
+        <image src="{{userInfo.avatarUrl}}"></image>
+        <view class="integel">
+            <view class="integel-txt">{{userInfo.nickName}}</view>
+            <!-- <view class="integel-num">{{info.money}}</view> -->
+        </view>
+    </view>
+</view>
+<view class="list">
+    <navigator hoverClass="none" url="../history/history">
+        <view class="nav">
+            <image src="../../images/my1.png"></image>
+            <view class="txt">历史</view>
+            <view class="next"></view>
+        </view>
+    </navigator>
+    <view wx:if="{{red_bag==1}}">
+        <navigator hoverClass="none" url="../withdrawals/withdrawals">
+            <view class="nav">
+                <image src="../../images/my3.png"></image>
+                <view class="txt">提现</view>
+                <view class="next"></view>
+            </view>
+        </navigator>
+    </view>
+    <button openType="contact">
+        <view class="nav">
+            <image src="../../images/my4.png"></image>
+            <view class="txt">联系客服</view>
+            <view class="next"></view>
+        </view>
+    </button>
+    <navigator hoverClass="none" url="../problem/problem">
+        <view class="nav">
+            <image src="../../images/problem.png"></image>
+            <view class="txt">问题</view>
+            <view class="next"></view>
+        </view>
+    </navigator>
+    <navigator hoverClass="none" url="../morexcq/morexcq">
+        <view class="nav">
+            <image src="../../images/xcximg.png"></image>
+            <view class="txt">更多小程序</view>
+            <view class="next"></view>
+        </view>
+    </navigator>
+</view>
+<view style="height:70px;"></view>
+<import src="../tabBar/tabBar.wxml"></import>
+<template is="tabBar" data="{{tabbar:tabbar}}"></template>
+<view hidden="{{!getUserLyaer}}">
+    <view class="layer-getuser"></view>
+    <view class="grant-layer">
+        <view class="layer-title">需要授权获取您的头像</view>
+        <button bindgetuserinfo="getUserInfo" class="getInfo" openType="getUserInfo">确认</button>
+    </view>
+</view>

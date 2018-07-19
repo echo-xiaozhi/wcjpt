@@ -1,0 +1,27 @@
+.wrap {
+    padding: 0 10px;
+}
+
+.problemWrap {
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.probleList {
+    margin-bottom: 10px;
+}
+
+.probleList .timu {
+    color: #333;
+}
+
+.probleList .anser {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
+.none {
+    display: none!important;
+}

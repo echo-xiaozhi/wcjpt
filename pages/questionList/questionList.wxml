@@ -1,0 +1,18 @@
+<view class="wrap">
+    <view class="memberList">
+        <view class="listTitle">
+            <view>题目列表</view>
+            <button>添加</button>
+        </view>
+        <view class="memberli" wx:for="{{[1,1,1,1,1,1,1,1]}}" wx:key="key">
+            <view>
+                <view class="memberName">本届单选主席是谁？</view>
+                <view class="otherMsg">
+                    <view class="tel">正确答案：习近平</view>
+                    <view class="grantNum">答案总数 4</view>
+                </view>
+            </view>
+            <view class="delete">删除</view>
+        </view>
+    </view>
+</view>

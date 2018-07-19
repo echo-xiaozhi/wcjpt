@@ -1,0 +1,265 @@
+<import src="../head/head.wxml"></import>
+<template is="tabhead" data="{{headheight:headheight,headtxt:headtxt}}"></template>
+<import src="../../utils/dist/weCropper.wxml"></import>
+<view hidden="{{!crop}}" style="750rpx;height:{{height}}px;padding-top:300rpx;background-color:#222">
+    <template is="weCropper" data="{{...cropperOpt}}"></template>
+    <form bindsubmit="cropimg" reportSubmit="true">
+        <button class="btn" formType="submit" plain="false" style="background-color:#09bb07;color:#fff;margin-top:30rpx;">确定</button>
+    </form>
+</view>
+<import src="../tabBar/tabBar.wxml"></import>
+<view bindtap="groupno" hidden="{{crop}}">
+    <view class="wrap">
+        <view class="wraphead">
+            <image src="{{bgimg}}"></image>
+            <view class="addimages">
+                <form bindsubmit="addCover" reportSubmit="true">
+                    <button formType="submit" hoverClass="none" plain="false">
+            添加封面照片
+          </button>
+                </form>
+            </view>
+        </view>
+        <view class="prizes">
+            <view class="wrtitle">
+                <view bindtap="config" class="titlefir">
+                    <text class="ticon"></text>奖品设置
+        </view>
+                <view bindtap="addPrize" class="add">添加奖品></view>
+            </view>
+            <view class="prizesfill" data-index="{{setIndex}}" wx:for="{{setArray}}" wx:for-index="setIndex" wx:key="key">
+                <!-- <view class="fillFlex">
+                    <view class="label">奖品类型</view>
+                    <view class="selectType">
+                        <view bindtap="bindPickerChange" class="typename {{item.prIndex==0?'on':''}}" data-id="0" data-index="{{setIndex}}">实物</view>
+                        <view bindtap="bindPickerChange" class="typename {{item.prIndex==2?'on':''}}" data-id="2" data-index="{{setIndex}}">电子卡</view>
+                        <view wx:if="{{red_bag==1}}">
+                            <view bindtap="bindPickerChange" class="typename {{item.prIndex==1?'on':''}}" data-id="1" data-index="{{setIndex}}">现金</view>
+                        </view>
+                    </view>
+                </view> -->
+                <view class="fillFlex" wx:if="{{item.prIndex==0}}">
+                    <view class="label">奖品名称</view>
+                    <input bindinput="prizeInput" data-index="{{setIndex}}" placeholder="奖品名称" placeholderClass="placeholder" type="text"></input>
+                </view>
+                <view class="fillFlex" wx:if="{{item.prIndex==1}}">
+                    <view class="label">单个红包金额</view>
+                    <input bindinput="moneyInput" data-index="{{setIndex}}" placeholder="红包金额" placeholderClass="placeholder" type="digit"></input>
+                </view>
+                <view class="fillFlex" wx:if="{{item.prIndex==1||item.prIndex==0}}">
+                    <view class="label" wx:if="{{item.prIndex==0}}">奖品数量</view>
+                    <view class="label" wx:else>红包个数</view>
+                    <view class="setnum">
+                        <view bindtap="setReduce" class="reduce" data-index="{{setIndex}}"></view>
+                        <input bindinput="setinput" class="peopnum" data-index="{{setIndex}}" type="number" value="{{item.num}}"></input>
+                        <view bindtap="setPlus" class="plus" data-index="{{setIndex}}"></view>
+                    </view>
+                </view>
+                <block wx:if="{{item.prIndex==2}}">
+                    <view class="fillFlex">
+                        <view class="label">名称</view>
+                        <input bindinput="cardnameInput" data-index="{{setIndex}}" placeholder="请输入电子卡名称" placeholderClass="placeholder" type="text"></input>
+                    </view>
+                    <view wx:for="{{item.cardmsg}}" wx:for-index="cardIndex" wx:key="cards">
+                        <view class="fillFlex">
+                            <view class="label">卡号</view>
+                            <input bindinput="cardnumInput" data-index="{{setIndex}}" data-indextwo="{{cardIndex}}" placeholder="请输入卡号" placeholderClass="placeholder" type="text"></input>
+                        </view>
+                        <view class="fillFlex">
+                            <view class="label">请输入密码</view>
+                            <input bindinput="cardpassInput" data-index="{{setIndex}}" data-indextwo="{{cardIndex}}" placeholder="密码" placeholderClass="placeholder"></input>
+                        </view>
+                    </view>
+                    <view bindtap="againcard" class="fillFlex" data-index="{{setIndex}}">
+                        <view style="color: #CCCCCC;font-size:24rpx;text-align:center;flex:1;-webkit-flex:1;">继续添加卡号</view>
+                    </view>
+                </block>
+                <view bindtap="delset" class="delset" data-index="{{setIndex}}" wx:if="{{setIndex!=0}}">
+                    <image src="../../images/del.png"></image>
+                </view>
+            </view>
+        </view>
+         <view class="supplement">
+            <view class="fillFlex">
+                <view class="label">补充信息</view>
+                <switch bindchange="switch1Change"></switch>
+            </view>
+            <view wx:if="{{isshow}}">
+                <view class="fillFlex">
+                    <view class="label">赞助名称</view>
+                    <input bindinput="businessInput" placeholder="请输入商家名称" placeholderClass="placeholder" type="text"></input>
+                </view>
+                <view class="explain">
+                    <view class="label">一句话广告
+            <text>(选填)</text>
+                    </view>
+                    <view class="explfill">
+                        <textarea bindinput="jdexplain" hidden="{{texthidden}}" maxlength="23" placeholder="请填写一句话广告" placeholderClass="placeholder"></textarea>
+                        <view class="limit">{{jdnum}}/23</view>
+                    </view>
+                </view>
+                <view class="explain explain2">
+                    <view class="label">
+                        <view>
+                            <text style="font-size:28rpx;color:#666;">详细说明</text>
+                            <text class="fonts">(选填)</text>
+                        </view>
+                        <picker bindchange="explainChange" range="{{explainArray}}" value="{{expIndex}}">
+                            <view class="conPicker">
+                {{explainArray[expIndex]}}>
+              </view>
+                        </picker>
+                    </view>
+                    <view class="explfill" wx:if="{{expIndex==0}}">
+                        <textarea bindinput="cjexplain" hidden="{{texthidden}}" maxlength="500" placeholder="请输入内容" placeholderClass="placeholder"></textarea>
+                        <view class="limit">{{cjnum}}/500</view>
+                    </view>
+                    <view class="upload_view" wx:if="{{expIndex==1}}">
+                        <view class="imgs">
+                            <view class="imgwrap" wx:for="{{imgs}}">
+                                <image src="{{item}}"></image>
+                            </view>
+                        </view>
+                        <view bindtap="addImg" class="addImg" style="width:200rpx;height:200rpx;">
+                            <image src="../../images/uploadimg.png" style="width:200rpx;height:200rpx;"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="copyJump">
+                    <view class="fillFlex">
+                        <view class="label">
+                            <text>允许组团参与</text>
+                            <text catchtap="group" class="icons">?</text>
+                            <text class="font">(团成员上限<text style="color:#666;margin:0 3px;">{{max_group_num}}</text>人)</text>
+                        </view>
+                        <image bindtap="isgroup" src="../../images/notselect.png" style="width:40rpx;height:40rpx;" wx:if="{{!isgroup}}"></image>
+                        <image bindtap="isgroup" src="../../images/selecton.png" style="width:40rpx;height:40rpx;" wx:else></image>
+                    </view>
+                    <view class="wenti" hidden="{{!group}}">
+                        <view>用户可以邀请好友组团参加,团内一人中奖后团中所有团员都可获得相同奖品</view>
+                        <view>开启要求: 奖品类型最低数量≥3</view>
+                        <view>每团人数: 人数根据奖品最低数量分为3、6、9人</view>
+                    </view>
+                    <view bindtap="copyJump" class="fillFlex">
+                        <view class="label">
+                            <text>公众号复制/小程序跳转</text>
+                            <text class="font">(付费功能)</text>
+                        </view>
+                        <image src="../../images/notselect.png" style="width:40rpx;height:40rpx;" wx:if="{{!iscopyJump}}"></image>
+                        <image src="../../images/selecton.png" style="width:40rpx;height:40rpx;" wx:else></image>
+                    </view>
+                    <view wx:if="{{ispay}}">
+                        <view class="fillFlex">
+                            <view class="label">类型</view>
+                            <view class="selectType">
+                                <view bindtap="payswitch" class="typename {{copyorjump==1?'on':''}}" data-id="1">公众号</view>
+                                <view bindtap="payswitch" class="typename {{copyorjump==2?'on':''}}" data-id="2">小程序</view>
+                            </view>
+                        </view>
+                        <view class="jumpfill" wx:if="{{copyorjump==1}}">
+                            <view class="label">请填写需复制的公众号/微信号等</view>
+                            <input bindinput="copyInput" placeholder="请填写可复制的名称" placeholderClass="placeholder" type="text"></input>
+                        </view>
+                        <view wx:if="{{copyorjump==2}}">
+                            <view class="jumpfill">
+                                <view class="label">APP ID</view>
+                                <input bindinput="appidInput" placeholder="请填写APP ID" placeholderClass="placeholder" type="text"></input>
+                            </view>
+                            <view class="jumpfill">
+                                <view class="label">小程序名称
+            </view>
+                                <input bindinput="appnameInput" placeholder="请填写小程序的名称" placeholderClass="placeholder" type="text"></input>
+                            </view>
+                            <view class="jumpfill">
+                                <view class="label">路径
+              <text>(选填)</text>
+                                </view>
+                                <input bindinput="srcInput" placeholder="请填写小程序的路径" placeholderClass="placeholder" type="text"></input>
+                            </view>
+                            <view class="jumpfill">
+                                <view class="label">参数
+              <text>(选填)</text>
+                                </view>
+                                <input bindinput="paramsInput" placeholder="请填写小程序参数" placeholderClass="placeholder" type="text"></input>
+                            </view>
+                            <view class="xcxcontact">
+                                <view>小程序请</view>
+                                <button openType="contact">联系客服</button>
+                                <view>指导输入</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view> 
+        <view class="condition">
+            <view class="wrtitle">
+                <view class="titlefir">
+                    <text class="ticon"></text>开奖条件
+        </view>
+                <picker bindchange="conditionChange" data-value="{{conArray[conIndex]}}" range="{{conArray}}" value="{{conIndex}}">
+                    <view class="conPicker">
+            {{conArray[conIndex]}}>
+          </view>
+                </picker>
+            </view>
+        </view>
+        <view class="condflex" wx:if="{{conIndex==0}}">
+            <view class="label">人数开奖</view>
+            <view class="setnum">
+                <view bindtap="numreduce" class="reduce"></view>
+                <input bindinput="awardinput" class="peopnum" type="number" value="{{awardsNum}}"></input>
+                <view bindtap="numplus" class="plus"></view>
+            </view>
+        </view>
+        <view class="condflex" wx:if="{{conIndex==1}}">
+            <view class="label">开奖时间</view>
+            <picker bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" mode="multiSelector" range="{{dateTimeArray1}}" value="{{dateTime1}}">
+                <view class="tui-picker-detail">{{startTime}}</view>
+            </picker>
+        </view>
+        <view class="condflex" wx:if="{{conIndex==2}}">
+            <view class="label">由发起者手动开奖</view>
+        </view>
+        <view class="contactUs">
+            <view>上首页或其它帮助请</view>
+            <button openType="contact">联系客服</button>
+        </view>
+        <form bindsubmit="submit" reportSubmit="true">
+            <button class="submit" disabled="{{btndisable}}" formType="submit">发起抽奖</button>
+        </form>
+    </view>
+    <view class="advert">
+    {{advertisement}}
+    </view>
+    <view style="height:80px;"></view>
+    <template is="tabBar" data="{{tabbar:tabbar}}"></template>
+</view>
+<view bindtap="layerclose" class="layer" hidden="{{!layer}}">
+    <view class="layerWrap">
+        <image class="layerimg" src="../../images/paycopy.png"></image>
+        <view class="layerTitle">{{pay_function}}元/次.名称可复制</view>
+        <view class="layerbody">
+            <view class="benefit">
+                <image src="../../images/index2.png"></image>
+                <text>步骤更精简</text>
+            </view>
+            <view class="benefit">
+                <image src="../../images/index2.png"></image>
+                <text>访问更轻松</text>
+            </view>
+            <view class="benefit">
+                <image src="../../images/index2.png"></image>
+                <text>推广更高效</text>
+            </view>
+        </view>
+        <view bindtap="confirm" class="layerfoot">确认</view>
+    </view>
+</view>
+<view hidden="{{!getUserLyaer}}">
+    <view class="layer-getuser"></view>
+    <view class="grant-layer">
+        <view class="layer-title">需要授权获取您的头像</view>
+        <button bindgetuserinfo="getUserInfo" class="getInfo" openType="getUserInfo">确认</button>
+    </view>
+</view>
