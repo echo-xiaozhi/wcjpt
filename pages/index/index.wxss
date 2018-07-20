@@ -89,6 +89,20 @@
     color: #666666;
     flex-shrink: 0;
 }
+.condflex .label text {
+    color: #999999;
+    font-size: 20rpx;
+}
+.condflex .label button{
+  font-size:20rpx;
+  color:#666; 
+  padding:0!important; 
+  text-decoration:underline;
+  margin-left:6rpx; 
+  line-height: 1; 
+  text-align: left;
+  display: inline-block;
+}
 
 .fillFlex .selectType {
     flex: 1;
@@ -415,13 +429,25 @@
     height: 112rpx;
     align-items: center;
     justify-content: space-between;
-    padding: 0 30rpx;
+    padding: 0 25rpx;
     margin-top: 20rpx;
 }
 
 .condflex .label {
     font-size: 28rpx;
     color: #666666;
+}
+.contactUss {
+    display: flex;
+     margin-top: 30rpx; 
+    align-items: center;
+}
+
+.contactUss view {
+    flex: 1;
+    text-align: right;
+    color: #999999;
+    font-size: 22rpx;
 }
 
 .contactUs {

@@ -39,9 +39,11 @@ Page({
         jdnum: 0,
         cjnum: 0,
         business: "",
+        // phone: '',
         copyorjump: 1,
         copyname: "",
         isgroup: !1,
+        isindex: !1,
         max_group_num: 0,
         bgimg: "https://z.9xy.cn/Public/images/attach2.jpg",
         cropperOpt: {
@@ -216,21 +218,36 @@ Page({
     },
     setinput: function(t) {
         var a = this.data.setArray, e = t.target.dataset.index, n = parseInt(t.detail.value);
+        //限制奖品数量1000
+        // if (t.detail.value > 999) {
+        //   a[e].num = 1000, this.setData({
+        //     setArray: a
+        //   })
+        //   return
+        // }
         a[e].num = n, this.setData({
             setArray: a
         }), max_group_num = 0 <= n && n < 3 ? 0 : 3 <= n && n < 6 ? 3 : 6 <= n && n < 9 ? 6 : 9, 
         this.setData({
             max_group_num: max_group_num
-        });
+        });   
     },
     setPlus: function(t) {
         var a = this.data.setArray, e = t.target.dataset.index, n = parseInt(a[e].num), s = n += 1;
+        // 限制奖品数量1000
+        // var nums = this.data.setArray[0].num;
+        // if (nums > 999) {
+        //   a[e].num = 1000, this.setData({
+        //     setArray: a
+        //   })
+        //   return
+        // }
         a[e].num = s, this.setData({
             setArray: a
         }), max_group_num = 0 <= s && s < 3 ? 0 : 3 <= s && s < 6 ? 3 : 6 <= s && s < 9 ? 6 : 9, 
         this.setData({
             max_group_num: max_group_num
-        });
+        });  
     },
     setReduce: function(t) {
         var a = this.data.setArray, e = t.target.dataset.index, n = parseInt(a[e].num), s = n -= 1;
@@ -243,9 +260,17 @@ Page({
     },
     awardinput: function(t) {
         var a = parseInt(t.detail.value);
-        this.setData({
+        //限制人数数量1000
+        if(a > 999){
+          var a = 1000
+          this.setData({
             awardsNum: a
-        });
+          });
+        }else{
+          this.setData({
+            awardsNum: a
+          });
+        }
     },
     numreduce: function(t) {
         var a = this.data.awardsNum;
@@ -255,9 +280,14 @@ Page({
     },
     numplus: function(t) {
         var a = this.data.awardsNum;
-        a += 1, this.setData({
+        //限制人数数量1000 之上的无法增加
+        if(a > 999){
+          return;
+        }else{
+          a += 1, this.setData({
             awardsNum: a
-        });
+          });
+        }   
     },
     switch1Change: function(t) {
         this.setData({
@@ -334,6 +364,11 @@ Page({
             business: t.detail.value
         });
     },
+    // phoneInput: function (t) {
+    //   this.setData({
+    //     phone: t.detail.value
+    //   });
+    // },
     appidInput: function(t) {
         this.data.appid = t.detail.value, console.log(t.detail.value);
     },
@@ -423,6 +458,14 @@ Page({
             isgroup: !0
         });
     },
+    //上首页
+    isindex: function (t) {
+      this.data.isindex ? this.setData({
+        isindex: !1
+      }) : this.setData({
+        isindex: !0
+      });
+    },
     explainChange: function(t) {
         this.setData({
             expIndex: t.detail.value
@@ -484,11 +527,8 @@ Page({
                 if (t.type = "time", t.typedesc = "达到设定时间自动开奖", "请选择时间" == n.data.startTime) return void tools.showNotice("请选择时间");
                 t.typevalue = n.data.startTime;
             } else t.type = "manual", t.typedesc = "由发起者手动开奖", t.typevalue = "";
-            console.log(123);
-            
             var d = getApp();
             tools.requset("?i=" + d.siteInfo.uniacid + "&c=entry&op=receive_card&do=add&m=" + d.modules_name + "&a=wxapp", t, function(t) {
-              console.log(t);
                 if (2 == t.status) wx.requestPayment({
                     timeStamp: t.info.timeStamp,
                     nonceStr: t.info.nonceStr,

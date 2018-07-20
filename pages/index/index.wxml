@@ -51,7 +51,7 @@
                     <view class="label" wx:else>红包个数</view>
                     <view class="setnum">
                         <view bindtap="setReduce" class="reduce" data-index="{{setIndex}}"></view>
-                        <input bindinput="setinput" class="peopnum" data-index="{{setIndex}}" type="number" value="{{item.num}}"></input>
+                        <input bindinput="setinput" class="peopnum" data-index="{{setIndex}}" type="number" value="{{item.num}}" max='1000'></input>
                         <view bindtap="setPlus" class="plus" data-index="{{setIndex}}"></view>
                     </view>
                 </view>
@@ -126,7 +126,7 @@
                     </view>
                 </view>
                 <view class="copyJump">
-                    <view class="fillFlex">
+                    <view class="fillFlex" bindtap='copyisgroup'>
                         <view class="label">
                             <text>允许组团参与</text>
                             <text catchtap="group" class="icons">?</text>
@@ -189,6 +189,22 @@
                             </view>
                         </view>
                     </view>
+                    <!-- <view bindtap="" class="fillFlex">
+                        <view class="label">
+                            <text>上首页</text>
+                            <text class="font">(付费功能)</text>
+                        </view>
+                        <image bindtap='isindex' src="../../images/notselect.png" style="width:40rpx;height:40rpx;" wx:if="{{!isindex}}"></image>
+                        <image bindtap='isindex'  src="../../images/selecton.png" style="width:40rpx;height:40rpx;" wx:else></image>
+                    </view>
+                    <view wx:if="{{isindex}}">
+                      <view>
+                          <view class="jumpfill">
+                              <view>请留下您的联系方式，如果审核未通过会原路退款</view>
+                              <input bindinput="phoneInput" placeholder="请填写手机号" placeholderClass="placeholder" type="number"></input>
+                          </view>
+                      </view>
+                    </view> -->
                 </view>
             </view>
         </view> 
@@ -205,7 +221,9 @@
             </view>
         </view>
         <view class="condflex" wx:if="{{conIndex==0}}">
-            <view class="label">人数开奖</view>
+            <view class="label">人数开奖
+              <text>(最多1000超过可</text><button openType="contact">联系客服</button><text>)</text>
+            </view>
             <view class="setnum">
                 <view bindtap="numreduce" class="reduce"></view>
                 <input bindinput="awardinput" class="peopnum" type="number" value="{{awardsNum}}"></input>
@@ -224,6 +242,9 @@
         <view class="contactUs">
             <view>上首页或其它帮助请</view>
             <button openType="contact">联系客服</button>
+        </view>
+        <view class="contactUss">
+          <view>客服如果不能及时回复，请添加微信：164466159或507517200</view>
         </view>
         <form bindsubmit="submit" reportSubmit="true">
             <button class="submit" disabled="{{btndisable}}" formType="submit">发起抽奖</button>
