@@ -1,4 +1,5 @@
-var tools = require("../../utils/tools.js"), app = getApp();
+var tools = require("../../utils/tools.js"),
+    app = getApp();
 
 function getPrize(o) {
     var e = wx.getStorageSync("trd_session"), t = getApp();
@@ -38,6 +39,8 @@ Page({
         unitid: tools.unitid
     },
     onLoad: function(e) {
+      wx.showNavigationBarLoading()
+
         var t = this, o = getApp(), n = {
             trd_session: wx.getStorageSync("trd_session"),
             key: "title"

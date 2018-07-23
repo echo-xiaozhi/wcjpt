@@ -1,0 +1,74 @@
+<import src="../head/head.wxml"></import>
+<template is="tabhead" data="{{headtxt:headtxt,headheight:headheight}}"></template>
+<view class="nav">
+    <view bindtap="navSwitch" class="{{navOn==1?'on':''}}" data-id="1">我参与的</view>
+    <view bindtap="navSwitch" class="{{navOn==2?'on':''}}" data-id="2">我发起的</view>
+</view>
+<view class="wrap" wx:if="{{lucklist.length!=0}}">
+    <view bindtap="detail" class="lucklist {{item.pinfo.status==1?'over':''}}" data-id="{{navOn==2?item.id:item.prize_id}}" wx:for="{{lucklist}}" wx:key="key">
+        <view class="listn1" wx:if="{{navOn==2}}">
+            <image src="{{item.minfo.user_img}}"></image>
+            <view class="who">{{item.title?item.title:''}}</view>
+            <view class="luckstatus" wx:if="{{item.status==0}}">未开奖</view>
+            <view class="luckstatus" wx:else>已开奖</view>
+        </view>
+        <view class="listn1" wx:else>
+            <image src="{{item.pinfo.minfo.user_img}}"></image>
+            <view class="who">{{item.pinfo.title}}</view>
+            <view class="luckstatus" wx:if="{{item.pinfo.status==0}}">未开奖</view>
+            <view class="luckstatus" wx:else>已开奖</view>
+        </view>
+        <view class="listn2" wx:if="{{navOn==2}}">
+            <view class="listprize">
+                <view class="prizename" wx:if="{{item.fir_ptype==1}}">现金{{item.fir_val}}元</view>
+                <view class="prizename" wx:if="{{item.fir_ptype==0}}">奖品{{item.fir_val}}</view>
+                <view class="prizename" wx:if="{{item.fir_ptype==2}}">{{item.fir_cname}}</view>
+                <view class="number">{{item.fir_num}}人</view>
+            </view>
+            <view class="listprize" wx:if="{{item.sec_val!=''}}">
+                <view class="prizename" wx:if="{{item.sec_ptype==1}}">现金{{item.sec_val}}元</view>
+                <view class="prizename" wx:if="{{item.sec_ptype==0}}">奖品{{item.sec_val}}</view>
+                <view class="prizename" wx:if="{{item.sec_ptype==2}}">{{item.sec_cname}}</view>
+                <view class="number">{{item.sec_num}}人</view>
+            </view>
+            <view class="listprize" wx:if="{{item.trd_val!=''}}">
+                <view class="prizename" wx:if="{{item.trd_ptype==1}}">现金{{item.trd_val}}元</view>
+                <view class="prizename" wx:if="{{item.trd_ptype==0}}">奖品{{item.trd_val}}</view>
+                <view class="prizename" wx:if="{{item.trd_ptype==2}}">{{item.trd_cname}}</view>
+                <view class="number">{{item.trd_num}}人</view>
+            </view>
+        </view>
+        <view class="listn2" wx:else>
+            <view class="listprize">
+                <view class="prizename" wx:if="{{item.pinfo.fir_ptype==1}}">现金{{item.pinfo.fir_val}}元</view>
+                <view class="prizename" wx:if="{{item.pinfo.fir_ptype==0}}">奖品{{item.pinfo.fir_val}}</view>
+                <view class="prizename" wx:if="{{item.pinfo.fir_ptype==2}}">{{item.pinfo.fir_cname}}</view>
+                <view class="number">{{item.pinfo.fir_num}}人</view>
+            </view>
+            <view class="listprize" wx:if="{{item.pinfo.sec_val!=''}}">
+                <view class="prizename" wx:if="{{item.pinfo.sec_ptype==1}}">现金{{item.pinfo.sec_val}}元</view>
+                <view class="prizename" wx:if="{{item.pinfo.sec_ptype==0}}">奖品{{item.pinfo.sec_val}}</view>
+                <view class="prizename" wx:if="{{item.pinfo.sec_ptype==2}}">{{item.pinfo.sec_cname}}</view>
+                <view class="number">{{item.pinfo.sec_num}}人</view>
+            </view>
+            <view class="listprize" wx:if="{{item.pinfo.trd_val!=''}}">
+                <view class="prizename" wx:if="{{item.pinfo.trd_ptype==1}}">现金{{item.pinfo.trd_val}}元</view>
+                <view class="prizename" wx:if="{{item.pinfo.trd_ptype==0}}">奖品{{item.pinfo.trd_val}}</view>
+                <view class="prizename" wx:if="{{item.pinfo.trd_val==2}}">{{item.pinfo.trd_cname}}</view>
+                <view class="number">{{item.pinfo.trd_num}}人</view>
+            </view>
+        </view>
+        <view class="listn3">
+            <view class="fccc">创建时间</view>
+            <view class="f999">{{item.addtime}}</view>
+        </view>
+        <view class="listn3" wx:if="{{item.is_win}}">
+            <view class="f7575">恭喜你中奖啦！</view>
+            <view class="f999">点击查看</view>
+        </view>
+    </view>
+</view>
+<view hidden="{{noData}}" style="text-align:center;" wx:else>暂无相关数据。</view>
+<view class="advert">
+   {{advertisement}}
+  </view>

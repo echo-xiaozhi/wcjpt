@@ -1,0 +1,54 @@
+/* pages/report/index.wxss */
+.ss-flex {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between
+}
+.ss-report .reson {
+  background: #f2f2f2;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom: 1px solid #d6d6d6;
+  color: #707070;
+  display:block;
+  padding-left: 20rpx;
+}
+.radio-group {
+  padding: 0 20rpx;
+  border-bottom: 1px solid #dfdfdf;
+  background: #ffffff
+}
+.radio-group .list {
+  color: #000;
+}
+.radio-group .list + .list{
+  border-top: 1px solid #dfdfdf;
+}
+.radio-group .list label {
+  padding:20rpx 0
+}
+.radio-group .list text {
+  flex: 1;
+  display: block
+}
+.section_title{
+  padding-top: 20rpx;
+}
+.radio-group .lists input {
+  display: block;
+  padding: 10rpx 50rpx;
+}
+.radio-group .lists + .lists {
+  border-top: 1px solid #dfdfdf;
+}
+.btn {
+  padding: 0 20rpx;
+  margin-top: 30rpx;
+}
+.btn button {
+  background-image: linear-gradient(-180deg, #F95F62 0%, #CF0F0A 100%);
+  color: #fff;
+}
+.btn .button-hover {
+  opacity: .8
+}

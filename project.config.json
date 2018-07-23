@@ -1,5 +1,8 @@
 {
 	"description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
@@ -10,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.94",
 	"appid": "wx529005a2b707df83",
-	"projectname": "%E6%8A%BD%E5%A5%96%E5%8A%A9%E6%89%8B",
+	"projectname": "wxapp",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

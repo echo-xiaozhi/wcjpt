@@ -34,9 +34,12 @@
             </view>
         </view>
     </view>
-    <view class="condition" wx:if="{{info.type==1}}">{{info.typevalue}}自动开奖</view>
-    <view class="condition" wx:elif="{{info.type==2}}">参与人数达到{{info.typevalue}}人自动开奖</view>
-    <view class="condition" wx:else>由发起者手动开奖</view>
+    <view class='ss-flex'>
+      <view class="condition" wx:if="{{info.type==1}}">{{info.typevalue}}自动开奖</view>
+      <view class="condition" wx:elif="{{info.type==2}}">参与人数达到{{info.typevalue}}人自动开奖</view>
+      <view class="condition" wx:else>由发起者手动开奖</view>
+      <navigator url="/pages/report/index?id={{id}}" class='ss-gray' hover-class="none">举报</navigator>
+    </view>
 </view>
 <view class="mode" wx:if="{{info.wechat_no!=''}}">
     <view class="sponsor">此奖品由
@@ -49,7 +52,7 @@
 <view bindtap="jump" class="mode" wx:if="{{info.jump_info!=''}}">
     <view class="sponsor">此奖品赞助商</view>
     <view class="jump">
-        <text>点此进人{{info.jump_info.app_name}}</text>
+        <text>点此进入{{info.jump_info.app_name}}</text>
         <image src="../../images/xcxlogo.png"></image>
         <text class="next"></text>
     </view>

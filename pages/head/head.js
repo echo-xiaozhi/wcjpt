@@ -1,4 +1,4 @@
-var tools = require("../../utils/tools.js"), util = require("../../utils/util.js");
+// var tools = require("../../utils/tools.js"), util = require("../../utils/util.js");
 
 Page({
     data: {},

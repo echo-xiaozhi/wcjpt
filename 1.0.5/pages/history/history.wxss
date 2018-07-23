@@ -1,0 +1,107 @@
+.nav {
+    height: 50px;
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.nav view {
+    width: 150px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+.nav view.on {
+    color: red;
+    border-bottom: 2px solid red;
+}
+
+.wrap {
+    padding: 0 10px;
+}
+
+.lucklist {
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 0 10px;
+    color: #333;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 6px 0 rgba(149,135,134,0.20);
+}
+
+.lucklist.over {
+    color: #CCC;
+}
+
+.lucklist .listn1 {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    border-bottom: 1px dashed #CCCCCC;
+}
+
+.listn1 image {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.listn1 .who {
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.listn1 .luckstatus {
+    background: #FFDEDC;
+    font-size: 12px;
+    width: 50px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 10px;
+    color: #FE5A50;
+    text-align: center;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.lucklist.over .luckstatus {
+    background: #F5F5F5;
+    color: #CCC;
+}
+
+.listn2 {
+    margin-top: 10px;
+}
+
+.listn2 .listprize {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.listn3 {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-top: 1px dashed #CCCCCC;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.fccc {
+    color: #CCC;
+}
+
+.f999 {
+    color: #999;
+}
+
+.f7575 {
+    color: #F07575;
+}

@@ -1,0 +1,133 @@
+page {
+    background-color: #f7f7f7;
+    font-size: 14px;
+}
+
+.tabbar_box {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 45px;
+    background-color: #FFF;
+    border-top: 1px solid #e7e7e7;
+}
+
+.tabbar_nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    height: 100%;
+    width: 60px;
+    text-align: center;
+}
+
+.tabbar_nav:nth-of-type(2) {
+    width: 60px!important;
+    background-color: #FE5A50;
+    color: #FFF!important;
+}
+
+.footerIcon {
+    position: fixed;
+    z-index: 1000;
+    width: 60px;
+    height: 8px;
+    background-color: #FE5A50;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.tabbar_nav:nth-of-type(1) .tabbar_icon {
+    margin-top: 3px;
+    width: 20px;
+    height: 16px;
+    margin-bottom: 5px;
+}
+
+.tabbar_icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-bottom: 2px;
+    display: block;
+}
+
+button::after {
+    border: none;
+}
+
+.tabhead {
+    width: 100%;
+    position: fixed;
+    background-color: #F7F7F7;
+    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+
+.tabhead .text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 13px;
+}
+
+.tabhead .goindex {
+    position: absolute;
+    bottom: 10px;
+    left: 20rpx;
+    z-index: 100001;
+}
+
+.layer-getuser {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,0.30);
+}
+
+.grant-layer {
+    background-color: #FFF;
+    z-index: 10000;
+    width: 80%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.layer-title {
+    padding: 80rpx 0 60rpx;
+    font-size: 28rpx;
+    color: #666666;
+}
+
+.grant-layer .getInfo {
+    background-color: #FE5A50;
+    color: #FFF;
+    border-radius: 0;
+}
+
+.advert {
+    margin-top: 60rpx;
+    padding: 0 40rpx;
+}
+
+.advert-las {
+    width: 100%;
+    display: block;
+}

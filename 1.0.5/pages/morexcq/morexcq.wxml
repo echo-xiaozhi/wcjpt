@@ -1,0 +1,8 @@
+<import src="../head/head.wxml"></import>
+<template is="tabhead" data="{{headheight:headheight,headtxt:headtxt}}"></template>
+<view class="xcxlist">
+    <view bindtap="jump" class="list" data-appid="{{item.appid}}" wx:for="{{list}}" wx:key="key">
+        <view class="name">{{item.name}}</view>
+        <view class="next"></view>
+    </view>
+</view>

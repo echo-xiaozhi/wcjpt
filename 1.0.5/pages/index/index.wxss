@@ -1,0 +1,629 @@
+.wrap {
+    padding: 0 20rpx;
+}
+
+.wraphead {
+    height: 350rpx;
+    position: relative;
+}
+
+.wraphead image {
+    display: block;
+    width: 100%;
+    height: 350rpx;
+}
+
+.wraphead .addimages {
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+}
+
+.addimages button {
+    background: rgba(0,0,0,0.21);
+    border-radius: 100px;
+    width: 213rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #FFFFFF;
+    border: none;
+}
+
+.placeholder {
+    color: #E6E6E6;
+}
+
+.placeholder2 {
+    color: #B3B3B3;
+}
+
+.prizes {
+    margin-top: 30rpx;
+}
+
+.wrtitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24rpx;
+}
+
+.titlefir {
+    color: #999999;
+}
+
+.titlefir text {
+    display: inline-block;
+    background: #999999;
+    width: 2px;
+    height: 15px;
+    margin-right: 10px;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+
+.wrtitle .add {
+    color: #F07575;
+}
+
+.prizesfill {
+    background-color: #FFF;
+    border-radius: 10rpx;
+    margin-top: 20rpx;
+    box-shadow: 0 1px 6rpx 0 rgba(149,135,134,0.20);
+}
+
+.fillFlex {
+    display: flex;
+    align-items: center;
+    height: 100rpx;
+    border-bottom: 1px solid #E6E6E6;
+    justify-content: space-between;
+    padding: 0 20rpx;
+}
+
+.fillFlex .label {
+    font-size: 28rpx;
+    color: #666666;
+    flex-shrink: 0;
+}
+.condflex .label text {
+    color: #999999;
+    font-size: 20rpx;
+}
+.condflex .label button{
+  font-size:20rpx;
+  color:#666; 
+  padding:0!important; 
+  text-decoration:underline;
+  margin-left:6rpx; 
+  line-height: 1; 
+  text-align: left;
+  display: inline-block;
+}
+
+.fillFlex .selectType {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.selectType .typename {
+    background-color: #E6E6E6;
+    border-radius: 8rpx;
+    width: 128rpx;
+    height: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+    font-size: 24rpx;
+    color: #999999;
+    margin-left: 25rpx;
+}
+
+.typename.on {
+    background-color: #FE5A50;
+    color: #FFF;
+}
+
+.fillFlex input {
+    text-align: right;
+    height: 80rpx;
+    color: #333;
+}
+
+.pricon {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-top: 1px solid #FD7964;
+    border-right: 1px solid #FD7964;
+    transform: rotate(135deg);
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-left: 8px;
+}
+
+.setnum {
+    display: flex;
+}
+
+.setnum view {
+    width: 80rpx;
+    height: 64rpx;
+    border: 1px solid #E6E6E6;
+    text-align: center;
+    line-height: 64rpx;
+}
+
+.setnum .peopnum {
+    width: 100rpx;
+    color: #B3B3B3;
+    border: 1px solid #E6E6E6;
+    text-align: center;
+    height: 64rpx;
+    line-height: 64rpx;
+}
+
+.setnum .reduce {
+    border-top-left-radius: 8rpx;
+    border-bottom-left-radius: 8rpx;
+    border-right: none;
+    position: relative;
+}
+
+.setnum .reduce::after {
+    content: '';
+    display: block;
+    width: 24rpx;
+    height: 4rpx;
+    background-color: #B3B3B3;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.setnum .plus {
+    border-bottom-right-radius: 8rpx;
+    border-top-right-radius: 8rpx;
+    border-left: none;
+    position: relative;
+}
+
+.setnum .plus::after,.setnum .plus::before {
+    content: '';
+    display: block;
+    width: 24rpx;
+    height: 4rpx;
+    background-color: #B3B3B3;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.setnum .plus::after {
+    transform: rotate(90deg);
+    margin-left: -12rpx;
+    margin-top: -2rpx;
+}
+
+.covermap {
+    position: relative;
+}
+
+.covermap image.coverPhoto {
+    width: 100%;
+    display: block;
+    height: 160px;
+}
+
+.addCover {
+    height: 160px;
+    background-color: #CFCFCF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addCover image {
+    width: 30px;
+    height: 30px;
+}
+
+.addCover button {
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.delcover {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 22px;
+    height: 22px;
+    background: rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delcover image {
+    width: 22px;
+    height: 22px;
+}
+
+.delset {
+    margin-top: 8px;
+}
+
+.delset image {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.supplement {
+    background-color: #FFF;
+    border-radius: 10rpx;
+    margin-top: 20rpx;
+    box-shadow: 0 1px 6rpx 0 rgba(149,135,134,0.20);
+}
+
+.supplement .explain {
+    padding: 0 20rpx;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.explain .label {
+    font-size: 28rpx;
+    color: #666666;
+    margin-top: 20rpx;
+}
+
+.explain .label text {
+    color: #999999;
+    font-size: 22rpx;
+}
+
+.explain .explfill {
+    margin-top: 20rpx;
+    height: 100rpx;
+    position: relative;
+}
+
+.explfill textarea {
+    width: 100%;
+    height: 100rpx;
+}
+
+.explfill .limit {
+    font-size: 24rpx;
+    color: #CCCCCC;
+    position: absolute;
+    bottom: 20rpx;
+    right: 0;
+}
+
+.explain2 .label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.explain2 {
+    border-bottom: none;
+}
+
+.explain2 .explfill {
+    height: 180rpx;
+}
+
+.explain2 .explfill textarea {
+    height: 180rpx;
+}
+
+.copyJump {
+}
+
+.wenti {
+    width: 90%;
+    margin: auto;
+    background: #E89A1A;
+    box-shadow: 0 2rpx 30rpx -10rpx #C48216;
+    border-radius: 4rpx;
+    font-size: 24rpx;
+    color: #FFFFFF;
+    padding: 20rpx;
+    line-height: 40rpx;
+    position: relative;
+    margin-top: 10rpx;
+}
+
+.wenti::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 20rpx solid transparent;
+    border-bottom-color: #E89A1A;
+    top: -40rpx;
+    left: 170rpx;
+}
+
+.wenti view {
+    opacity: .8;
+}
+
+.copyJump .label .icons {
+    display: inline-block;
+    width: 28rpx;
+    height: 28rpx;
+    background-color: #ABABAB;
+    border-radius: 50%;
+    color: #FFF;
+    font-size: 20rpx;
+    text-align: center;
+    line-height: 28rpx;
+    margin-left: 10rpx;
+    margin-right: 6rpx;
+}
+
+.copyJump .label .font {
+    color: #ccc;
+    font-size: 20rpx;
+    margin-left: 8rpx;
+}
+
+.copyJump .jumpfill {
+    padding: 30rpx 20rpx 10rpx;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.jumpfill .label {
+    color: #666666;
+    font-size: 28rpx;
+}
+
+.jumpfill input {
+    width: 100%;
+    height: 80rpx;
+}
+
+.xcxcontact {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20rpx;
+    color: #666;
+}
+
+.xcxcontact button {
+    padding: 0;
+    font-size: 28rpx;
+    color: #3b92d9;
+    text-decoration: underline;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: transparent;
+}
+
+.condition {
+    margin-top: 50rpx;
+}
+
+.conPicker {
+    color: #F07575;
+}
+
+.condflex {
+    display: flex;
+    background-color: #FFF;
+    border-radius: 10rpx;
+    box-shadow: 0 1px 30rpx -3rpx rgba(209,209,209,0.40);
+    height: 112rpx;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25rpx;
+    margin-top: 20rpx;
+}
+
+.condflex .label {
+    font-size: 28rpx;
+    color: #666666;
+}
+.contactUss {
+    display: flex;
+     margin-top: 30rpx; 
+    align-items: center;
+}
+
+.contactUss view {
+    flex: 1;
+    text-align: right;
+    color: #999999;
+    font-size: 22rpx;
+}
+
+.contactUs {
+    display: flex;
+    margin-top: 60rpx;
+    align-items: center;
+}
+
+.contactUs view {
+    flex: 1;
+    text-align: right;
+    color: #999999;
+    font-size: 22rpx;
+}
+
+.contactUs button {
+    font-size: 20rpx;
+    color: #666;
+    padding: 0!important;
+    text-decoration: underline;
+    margin-left: 6rpx;
+}
+
+.submit {
+    background: #FE5A50!important;
+    box-shadow: 0 1px 4px 0 rgba(230,216,215,0.50);
+    font-size: 14px;
+    color: #FFF;
+    margin: 25px 0;
+    height: 45px;
+    line-height: 45px;
+}
+
+.layer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,0.30);
+}
+
+.layerWrap {
+    z-index: 10000;
+    width: 70%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #FFF;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 140rpx;
+}
+
+.layerclose {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    background-color: #cccccc;
+    position: absolute;
+    right: -10rpx;
+    top: -20rpx;
+}
+
+.layerclose::after,.layerclose::before {
+    content: '';
+    display: block;
+    width: 26rpx;
+    height: 4rpx;
+    background-color: #FFF;
+    position: absolute;
+    left: 8rpx;
+    top: 18rpx;
+}
+
+.layerclose::after {
+    transform: rotate(45deg);
+}
+
+.layerclose::before {
+    transform: rotate(-45deg);
+}
+
+.layerimg {
+    width: 400rpx;
+    height: 275rpx;
+    position: absolute;
+    display: block;
+    top: -180rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.layerTitle {
+    text-align: center;
+    font-size: 28rpx;
+    font-weight: bold;
+}
+
+.layerbody {
+    padding: 20rpx 0;
+}
+
+.layerbody .benefit {
+    margin-top: 40rpx;
+    color: #999;
+    font-size: 28rpx;
+}
+
+.benefit image {
+    width: 35rpx;
+    height: 35rpx;
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-right: 15rpx;
+}
+
+.layerfoot {
+    width: 310rpx;
+    height: 85rpx;
+    background-color: #fe5a50;
+    text-align: center;
+    border-radius: 100rpx;
+    font-size: 36rpx;
+    line-height: 85rpx;
+    color: #FFF;
+    margin: 45rpx auto;
+}
+
+.upload_view {
+    display: flex;
+    margin: 20rpx 0;
+    flex-wrap: wrap;
+}
+
+.imgs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imgs .imgwrap {
+    position: relative;
+    width: 200rpx;
+    height: 200rpx;
+    margin-right: 15rpx;
+    margin-bottom: 15px;
+}
+
+.imgwrap .status {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: rgba(0,0,0,0.4);
+    color: #FFF;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgs image {
+    width: 200rpx;
+    height: 200rpx;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+}
+
+.addImg {
+    flex-shrink: 0;
+    width: 200rpx;
+    height: 200rpx;
+}

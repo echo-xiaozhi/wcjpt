@@ -47,10 +47,20 @@
     text-align: right;
 }
 
+.ss-flex {
+  display:flex;
+  justify-content:space-between;
+  line-height:36rpx;
+  margin-top: 20rpx;
+}
+
+.ss-flex .ss-gray{
+  color: #595f6b
+}
+
 .condition {
     font-size: 24rpx;
     color: #B3B3B3;
-    margin-top: 20rpx;
 }
 
 .mode {
