@@ -35,8 +35,9 @@
     </view>
 </view>
 <view class="advert">
-  {{advertisement}} 
-  </view>
+  <!--{{advertisement}}-->
+  <ad class="advert-las" unit-id="adunit-bb3aab0243ca9304"></ad>
+</view>
 <view style="height:80px;"></view>
 <import src="../tabBar/tabBar.wxml"></import>
 <template is="tabBar" data="{{tabbar:tabbar}}"></template>

@@ -251,7 +251,8 @@
         </form>
     </view>
     <view class="advert">
-    {{advertisement}}
+    <!-- {{advertisement}} -->
+    <ad class="advert-las" unit-id="adunit-bb3aab0243ca9304"></ad>
     </view>
     <view style="height:80px;"></view>
     <template is="tabBar" data="{{tabbar:tabbar}}"></template>

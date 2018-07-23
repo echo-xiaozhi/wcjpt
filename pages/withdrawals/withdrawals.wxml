@@ -16,5 +16,6 @@
     </form>
 </view>
 <view class="advert">
-  {{advertisement}}
+  <!-- {{advertisement}} -->
+  <ad class="advert-las" unit-id="adunit-bb3aab0243ca9304"></ad>
   </view>

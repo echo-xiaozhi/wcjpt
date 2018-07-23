@@ -58,6 +58,7 @@ Page({
             t.setData({
                 advertisement: e.info ? e.info : ""
             });
+            console.log(e.info)
         }), o.editTabBar(), o.tabhead(t), o.globalData.userInfo ? t.setData({
             userInfo: o.globalData.userInfo
         }) : t.setData({
