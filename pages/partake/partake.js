@@ -265,5 +265,6 @@ Page({
         o.group_code = e.data.group_code, o.trd_session = a, tools.requset("/Member/joinGroup", o, function(t) {
             actDetail(e);
         });
-    }
+    },
+    goback: tools.goback
 });

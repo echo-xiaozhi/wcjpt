@@ -55,5 +55,6 @@ Page({
             imageUrl: a.siteInfo.siteroot + "?i=" + a.siteInfo.uniacid + "&c=entry&op=receive_card&do=share&m=" + a.modules_name + "&a=wxapp&id=" + e.data.id,
             path: "/pages/partake/partake?id=" + e.data.id + "&group_code=" + e.data.info.group.id
         };
-    }
+    },
+    goback: tools.goback
 });

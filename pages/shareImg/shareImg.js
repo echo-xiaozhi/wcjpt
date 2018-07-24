@@ -58,5 +58,6 @@ Page({
                 wx.hideLoading(), tools.showNotice("保存失败");
             }
         });
-    }
+    },
+    goback: tools.goback
 });

@@ -41,5 +41,6 @@ Page({
         this.setData({
             anser: e
         });
-    }
+    },
+    goback: tools.goback
 });

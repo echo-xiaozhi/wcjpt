@@ -84,7 +84,7 @@ button::after {
 
 .tabhead .goindex {
     position: absolute;
-    bottom: 10px;
+    bottom: 7px;
     left: 20rpx;
     z-index: 100001;
 }

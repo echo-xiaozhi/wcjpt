@@ -112,6 +112,14 @@ var app = getApp(), sign_token = "mysignhahaha", request_domain = "https://z.9xy
         image: "../../images/notice.png",
         duration: 2e3
     });
+},
+goback = function () {
+  wx.navigateBack()
+},
+gobackhome = function () {
+  wx.navigateTo({
+    url: '../../pages/news/news',
+  })
 };
 
 module.exports = {
@@ -120,5 +128,7 @@ module.exports = {
     userInfo: userInfo,
     imageurl: imageurl,
     showNotice: showNotice,
-    unitid: unitid
+    unitid: unitid,
+    goback: goback,
+    gobackhome: gobackhome
 };

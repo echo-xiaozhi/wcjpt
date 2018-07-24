@@ -70,5 +70,6 @@ Page({
                 }), balance(o);
             });
         } else tools.showNotice("请输入提现金额");
-    }
+    },
+    goback: tools.goback
 });

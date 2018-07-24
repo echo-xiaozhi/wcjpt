@@ -90,5 +90,6 @@ Page({
         wx.navigateTo({
             url: "../partake/partake?id=" + e
         });
-    }
+  },
+    goback: tools.goback
 });

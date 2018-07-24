@@ -1,5 +1,5 @@
 <import src="../head/head.wxml"></import>
-<template is="tabhead" data="{{headtxt:headtxt,headheight:headheight}}"></template>
+<template is="tabhead" data="{{headtxt:headtxt,headheight:headheight,tabshow:'tab'}}"></template>
 <view class="head">
     <image class="headbg" src="../../images/mybg.png"></image>
     <view class="user-msg">

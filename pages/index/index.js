@@ -552,5 +552,6 @@ Page({
                 return !0;
             });
         } else tools.showNotice("请输入卡名称"); else tools.showNotice("请输入红包金额"); else tools.showNotice("请输入奖品名称");
-    }
+    },
+    goback: tools.gobackhome
 });

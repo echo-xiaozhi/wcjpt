@@ -86,5 +86,6 @@ Page({
         wx.navigateTo({
             url: "../partake/partake?id=" + t
         });
-    }
+    },
+    goback: tools.goback
 });

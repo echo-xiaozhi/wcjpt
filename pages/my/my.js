@@ -42,5 +42,6 @@ Page({
     onShareAppMessage: function() {},
     getUserInfo: function(e) {
         tools.userInfo(this, e);
-    }
+    },
+    goback: tools.gobackhome
 });

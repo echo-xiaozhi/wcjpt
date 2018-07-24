@@ -31,5 +31,6 @@ Page({
     onShareAppMessage: function() {},
     more: function(t) {
         this.data.p += 1, imlist(this);
-    }
+    },
+    goback: tools.goback
 });

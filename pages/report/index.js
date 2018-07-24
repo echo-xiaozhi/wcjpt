@@ -133,9 +133,7 @@ Page({
           duration: 800
         })
         setTimeout(function () {
-          wx.navigateTo({
-            url: '../../pages/news/news'
-          })
+          wx.navigateBack()
         }, 800)
       }
       if (t.status === 2) {
@@ -145,5 +143,6 @@ Page({
         })
       }
     });
-  }
+  },
+  goback: tools.goback
 })

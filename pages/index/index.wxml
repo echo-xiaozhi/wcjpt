@@ -1,5 +1,5 @@
 <import src="../head/head.wxml"></import>
-<template is="tabhead" data="{{headheight:headheight,headtxt:headtxt}}"></template>
+<template is="tabhead" data="{{headheight:headheight,headtxt:headtxt,tabshow:'tab'}}"></template>
 <import src="../../utils/dist/weCropper.wxml"></import>
 <view hidden="{{!crop}}" style="750rpx;height:{{height}}px;padding-top:300rpx;background-color:#222">
     <template is="weCropper" data="{{...cropperOpt}}"></template>
