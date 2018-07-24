@@ -1,0 +1,64 @@
+.wrap {
+    padding: 0 10px;
+}
+
+.balance {
+    height: 135px;
+    background-size: 100% 100%;
+    padding: 20px 0 0 15px;
+    position: relative;
+}
+
+.balance image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.balance .confir {
+    color: #FFF;
+}
+
+.balance .bamoney {
+    font-size: 45px;
+    color: #FFF;
+    margin-top: 30px;
+}
+
+.withdrawals {
+    background: #FFFFFF;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.withmoney {
+    color: #CCC;
+}
+
+.withdrawals input {
+    width: 100%;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.allout {
+    text-align: right;
+    color: #F07575;
+    margin-top: 8px;
+}
+
+.submit {
+    width: 90%;
+    background-color: #FE5A50;
+    color: #FFF;
+    font-size: 14px;
+    height: 45px;
+    line-height: 45px;
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}

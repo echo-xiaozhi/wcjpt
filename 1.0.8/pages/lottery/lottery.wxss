@@ -1,0 +1,229 @@
+.head {
+    background-color: #FFF;
+    padding: 10px;
+}
+
+.prizepho {
+    height: 160px;
+    position: relative;
+}
+
+.prizepho image {
+    width: 100%;
+    height: 160px;
+}
+
+.actName {
+    position: absolute;
+    top: 10px;
+    color: #FFF;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.prizecs {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.prizecs .prizecof {
+    color: #B3B3B3;
+    font-size: 15px;
+}
+
+.prizeLi {
+    color: #000;
+    font-size: 17px;
+    flex: 1;
+    text-align: right;
+}
+
+.prizeLi view {
+    margin-bottom: 5px;
+}
+
+.prizeLi text {
+    color: #999;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.mode {
+    height: 35px;
+    line-height: 35px;
+    padding: 0 20px;
+    background-color: #FAFAFA;
+    font-size: 12px;
+    color: #949494;
+    border-top: 1px dashed #cccccc;
+    text-align: right;
+    box-shadow: 0 1px 6px 0 rgba(149,135,134,0.20);
+}
+
+.remarks {
+    padding: 10px;
+    color: #7A7A7A;
+    font-size: 12px;
+}
+
+.winning {
+    background-color: #FFF;
+    text-align: center;
+    padding-top: 10px;
+    box-shadow: 0 1px 6px 0 rgba(149,135,134,0.20);
+}
+
+.nowinn {
+    padding-bottom: 20px;
+}
+
+.share image {
+    width: 15px;
+    height: 17px;
+    display: block;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.winnIcons image {
+    width: 32px;
+    height: 35px;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+.winnIcons text {
+    font-size: 17px;
+    color: #FE5A50;
+    text-shadow: 0 1px 1px rgba(195,94,94,0.50);
+}
+
+.winnprize {
+    padding: 10px 0 15px;
+    text-align: center;
+    border-top: 1px dashed #CCCCCC;
+    border-bottom: 1px dashed #CCCCCC;
+    margin-top: 15px;
+}
+
+.winnprize .confione {
+    font-size: 12px;
+    color: #B3B3B3;
+}
+
+.winnprize .confitwo {
+    font-size: 17px;
+    color: #333333;
+    margin-top: 5px;
+}
+
+.address {
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    color: #F07575;
+    background-color: #FAFAFA;
+}
+
+.winningList {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #FFF;
+    box-shadow: 0 1px 6px 0 rgba(149,135,134,0.20);
+    border-radius: 5px;
+}
+
+.winnTilte {
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #F0F0F0;
+    font-size: 15px;
+    color: #9F9494;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.winnTilte::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent #FFF transparent transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.winnTilte::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent transparent #FFF;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.winnli {
+    display: flex;
+    align-items: center;
+    color: #9F9494;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.winnli image {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.winnli .prizeName {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.thankcy {
+    background: #FAFAFA;
+    border-radius: 0 0 5px 5px;
+    border-top: 1px dashed #CCCCCC;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 12px;
+    color: #B3B3B3;
+    box-shadow: 0 1px 6px 0 rgba(149,135,134,0.20);
+}
+
+.thankcy text {
+    color: #000000;
+}
+
+.footer {
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+.footer button {
+    background: #FE5A50;
+    box-shadow: 0 1px 4px 0 rgba(230,216,215,0.50);
+    color: #FFF;
+    font-size: 14px;
+    height: 45px;
+    line-height: 45px;
+}

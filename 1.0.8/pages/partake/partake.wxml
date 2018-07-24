@@ -1,0 +1,368 @@
+<import src="../head/head.wxml"></import>
+<template is="tabhead" data="{{headheight:headheight,headtxt:headtxt}}"></template>
+<view class="head">
+    <view class="prizeMsg">
+        <view class="prizepho">
+            <image src="{{info.imgurl}}"></image>
+            <view class="sponsor-zans" wx:if="{{info.uname!=''}}">{{info.uname}}</view>
+        </view>
+        <view class="prizecs">
+            <view class="prizecof" wx:if="{{info.fir_ptype==0}}">{{info.fir_val}}</view>
+            <view class="prizecof" wx:elif="{{info.fir_ptype==1}}">{{info.fir_val}}元</view>
+            <view class="prizecof" wx:else>{{info.fir_cname}}</view>
+            <view class="prizeLi">
+                <view wx:if="{{info.fir_ptype==0}}">*{{info.fir_num}}</view>
+                <view wx:else>*{{info.fir_num}}</view>
+            </view>
+        </view>
+        <view class="prizecs" wx:if="{{info.sec_val!=''}}">
+            <view class="prizecof" wx:if="{{info.sec_ptype==0}}">{{info.sec_val}}</view>
+            <view class="prizecof" wx:elif="{{info.sec_ptype==1}}">{{info.sec_val}}元</view>
+            <view class="prizecof" wx:else>{{info.sec_cname}}</view>
+            <view class="prizeLi">
+                <view wx:if="{{info.sec_ptype==0}}">*{{info.sec_num}}</view>
+                <view wx:else>*{{info.sec_num}}</view>
+            </view>
+        </view>
+        <view class="prizecs" wx:if="{{info.trd_val!=''}}">
+            <view class="prizecof" wx:if="{{info.trd_ptype==0}}">{{info.trd_val}}</view>
+            <view class="prizecof" wx:elif="{{info.trd_ptype==1}}">{{info.trd_val}}元</view>
+            <view class="prizecof" wx:else>{{info.trd_cname}}</view>
+            <view class="prizeLi">
+                <view wx:if="{{info.trd_ptype==0}}">*{{info.trd_num}}</view>
+                <view wx:else>*{{info.trd_num}}</view>
+            </view>
+        </view>
+    </view>
+    <view class='ss-flex'>
+      <view class="condition" wx:if="{{info.type==1}}">{{info.typevalue}}自动开奖</view>
+      <view class="condition" wx:elif="{{info.type==2}}">参与人数达到{{info.typevalue}}人自动开奖</view>
+      <view class="condition" wx:else>由发起者手动开奖</view>
+      <navigator url="/pages/report/index?id={{id}}" class='ss-gray' hover-class="none">举报</navigator>
+    </view>
+</view>
+<view class="mode" wx:if="{{info.wechat_no!=''}}">
+    <view class="sponsor">此奖品由
+    <text>{{info.wechat_no}}</text>赞助</view>
+    <view bindtap="copy" class="copyname" data-name="{{info.wechat_no}}">
+        <image src="../../images/copy.png"></image>
+        <text>复制公众号</text>
+    </view>
+</view>
+<view bindtap="jump" class="mode" wx:if="{{info.jump_info!=''}}">
+    <view class="sponsor">此奖品赞助商</view>
+    <view class="jump">
+        <text>点此进入{{info.jump_info.app_name}}</text>
+        <image src="../../images/xcxlogo.png"></image>
+        <text class="next"></text>
+    </view>
+</view>
+<view class="padd" wx:if="{{info.brief_description}}">
+    <view class="remarks">{{info.brief_description}}</view>
+</view>
+<view class="winning" wx:if="{{state==3}}">
+    <view bindtap="Invitation" class="share">
+        <image src="../../images/share.png"></image>
+    </view>
+    <view class="winnIcons">
+        <image src="../../images/winn.png"></image>
+        <text>恭喜您中奖啦！</text>
+    </view>
+    <view class="winnprize">
+        <view class="confitwo" wx:if="{{info.my_in_prize.type=='fir'}}">
+            <view class="marginBo" wx:if="{{info.fir_ptype==0}}">一等奖：奖品{{info.fir_val}}</view>
+            <view class="marginBo" wx:elif="{{info.fir_ptype==1}}">一等奖：{{info.fir_val}}元</view>
+            <view class="marginBo" wx:else>{{info.fir_cname}}</view>
+            <view class="card" wx:if="{{info.fir_ptype==2}}">
+                <view class="cardwrap">
+                    <view class="cardsmg">
+                        <text class="label">卡号</text>
+                        <text class="num">{{info.my_in_prize.cardnum}}</text>
+                    </view>
+                    <view bindtap="copy" class="cardcopy" data-name="{{info.my_in_prize.cardnum}}">复制</view>
+                </view>
+                <view class="cardwrap">
+                    <view class="cardsmg">
+                        <text class="label">密码</text>
+                        <text class="num">{{info.my_in_prize.cardpass}}</text>
+                    </view>
+                    <view bindtap="copy" class="cardcopy" data-name="{{info.my_in_prize.cardpass}}">复制</view>
+                </view>
+            </view>
+            <view bindtap="address" class="address" wx:if="{{info.fir_ptype==0}}">填写收货地址>></view>
+        </view>
+        <view class="confitwo" wx:elif="{{info.my_in_prize.type=='sec'}}">
+            <view class="marginBo" wx:if="{{info.sec_ptype==0}}">二等奖：奖品{{info.sec_val}}</view>
+            <view class="marginBo" wx:elif="{{info.sec_ptype==1}}">二等奖：{{info.sec_val}}元</view>
+            <view class="marginBo" wx:else>{{info.sec_cname}}</view>
+            <view class="card" wx:if="{{info.sec_ptype==2}}">
+                <view class="cardwrap">
+                    <view class="cardsmg">
+                        <text class="label">卡号</text>
+                        <text class="num">{{info.my_in_prize.cardnum}}</text>
+                    </view>
+                    <view bindtap="copy" class="cardcopy" data-name="{{info.my_in_prize.cardnum}}">复制</view>
+                </view>
+                <view class="cardwrap">
+                    <view class="cardsmg">
+                        <text class="label">密码</text>
+                        <text class="num">{{info.my_in_prize.cardpass}}</text>
+                    </view>
+                    <view bindtap="copy" class="cardcopy" data-name="{{info.my_in_prize.cardpass}}">复制</view>
+                </view>
+            </view>
+            <view bindtap="address" class="address" wx:if="{{info.sec_ptype==0}}">填写收货地址>></view>
+        </view>
+        <view class="confitwo" wx:elif="{{info.my_in_prize.type=='trd'}}">
+            <view class="marginBo" wx:if="{{info.trd_ptype==0}}">三等奖：奖品{{info.trd_val}}</view>
+            <view class="marginBo" wx:elif="{{info.trd_ptype==1}}">三等奖：{{info.trd_val}}元</view>
+            <view class="marginBo" wx:else>{{info.trd_cname}}</view>
+            <view class="card" wx:if="{{info.trd_ptype==2}}">
+                <view class="cardwrap">
+                    <view class="cardsmg">
+                        <text class="label">卡号</text>
+                        <text class="num">{{info.my_in_prize.cardnum}}</text>
+                    </view>
+                    <view bindtap="copy" class="cardcopy" data-name="{{info.my_in_prize.cardnum}}">复制</view>
+                </view>
+                <view class="cardwrap">
+                    <view class="cardsmg">
+                        <text class="label">密码</text>
+                        <text class="num">{{info.my_in_prize.cardpass}}</text>
+                    </view>
+                    <view bindtap="copy" class="cardcopy" data-name="{{info.my_in_prize.cardpass}}">复制</view>
+                </view>
+            </view>
+            <view bindtap="address" class="address" wx:if="{{info.trd_ptype==0}}">填写收货地址>></view>
+        </view>
+    </view>
+</view>
+<view class="winning nowinn" wx:if="{{state==4}}">
+    <view bindtap="Invitation" class="share">
+        <image src="../../images/share.png"></image>
+    </view>
+    <view class="winnIcons">
+        <image src="../../images/nowinn.png" style="width:127rpx;height:75rpx;"></image>
+        <text style="color:#B3B3B3;text-shadow:none;font-weight:bold;">很遗憾，您未中奖</text>
+    </view>
+</view>
+<view class="actCalne" wx:if="{{state==6}}">
+    <view>活动因参与人数不够而取消。</view>
+    <view style="color:#B3B3B3;font-size:12px;">
+    感谢其他
+    <text style="margin:0 6rpx;font-weight:bold;">{{info.apply_num}}</text>位伙伴的参与。
+  </view>
+</view>
+<view wx:if="{{info.status==1&&state!=6}}">
+    <view class="winningList">
+        <view class="winnTilte">中奖名单</view>
+        <view class="winnli" wx:for="{{info.in_prize}}" wx:key="key">
+            <view class="winnliN1">
+                <image src="{{item.minfo.user_img}}"></image>
+                <view class="nick">{{item.minfo.nickname}}</view>
+                <image class="gropimg" src="../../images/group.png" wx:if="{{info.max_group_num>0}}"></image>
+                <view class="prizeName" wx:if="{{item.type=='fir'}}">一等奖</view>
+                <view class="prizeName" wx:elif="{{item.type=='sec'}}">二等奖</view>
+                <view class="prizeName" wx:elif="{{item.type=='trd'}}">三等奖</view>
+            </view>
+            <view class="winnliN2" wx:if="{{info[item['type']+'_ptype']==0&&info.is_mine}}">
+                <view wx:if="{{item.minfo.address.length==0}}">未填写收货信息</view>
+                <view class="addreflex" wx:else>
+                    <view class="add-flex1">
+                        <view>收货人：{{item.minfo.address.name}}</view>
+                        <view>电话：{{item.minfo.address.phone}}</view>
+                        <view>收货地址：{{item.minfo.address.address}}</view>
+                    </view>
+                    <view bindtap="copy" class="add-flex2" data-name="收货人：{{item.minfo.address.name}},电话：{{item.minfo.address.phone}},收货地址：{{item.minfo.address.address}}">
+                        <image src="../../images/copy.png"></image>
+                        <text>一键复制</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="thankcy">
+    感谢其他
+    <text>{{info.apply_num}}</text>位伙伴的参与
+    <text bindtap="all">点击查看>></text>
+    </view>
+</view>
+<view class="partake" wx:if="{{state==1&&info.max_group_num==0}}">
+    <form bindsubmit="participate" reportSubmit="true">
+        <button formType="submit">参与抽奖</button>
+    </form>
+</view>
+<view class="parSuccess" wx:if="{{state==2&&info.max_group_num==0}}">
+    <button>等待开奖
+    </button>
+    <view bindtap="goindex" class="moreluck">更多免费抽奖>></view>
+</view>
+<view style="overflow: hidden;" wx:if="{{info.max_group_num!=0&&info.status==0&&!info.is_mine}}">
+    <block wx:if="{{state==1}}">
+        <view animation="{{animationData}}" bindtouchend="touchEnd" bindtouchmove="touchMove" bindtouchstart="touchStart" class="group" wx:if="{{group_code==''}}">
+            <form bindsubmit="participate" reportSubmit="true">
+                <button class="btn1" formType="submit" style="background-image: linear-gradient(-180deg, #F95F62 0%, #CF0F0A 100%);">参与抽奖</button>
+            </form>
+        </view>
+        <block wx:else>
+            <view class="groupjoin" wx:if="{{info.group.apply_num<info.max_group_num}}">
+                <form bindsubmit="participate" reportSubmit="true">
+                    <button formType="submit">
+                        <view class="ones">点击参与组队抽奖</view>
+                        <view class="twos">一人抽中,全队中奖</view>
+                    </button>
+                </form>
+            </view>
+            <view animation="{{animationData}}" bindtouchend="touchEnd" bindtouchmove="touchMove" bindtouchstart="touchStart" class="group" wx:else>
+                <form bindsubmit="participate" reportSubmit="true">
+                    <button class="btn1" formType="submit" style="background-image: linear-gradient(-180deg, #F95F62 0%, #CF0F0A 100%);">参与抽奖</button>
+                </form>
+            </view>
+        </block>
+    </block>
+    <block wx:if="{{state==2}}">
+        <view animation="{{animationData}}" bindtouchend="touchEnd" bindtouchmove="touchMove" bindtouchstart="touchStart" class="group" wx:if="{{info.group_code==''}}">
+            <button class="btn1" wx:if="{{group_code==''}}">等待开奖</button>
+            <button class="btn1" wx:else>组队成功，请等待开奖</button>
+            <view class="groupxian">..........</view>
+            <view bindtap="groupBtn" class="groupBtn">
+                <view class="v1">继续邀好友组队</view>
+                <view class="v2">一人抽中,全队中奖</view>
+            </view>
+        </view>
+        <block wx:else>
+            <view animation="{{animationData}}" bindtouchend="touchEnd" bindtouchmove="touchMove" bindtouchstart="touchStart" class="group" wx:if="{{info.group.apply_num<info.max_group_num}}">
+                <button class="btn1">等待开奖</button>
+                <view class="groupxian">..........</view>
+                <view bindtap="goshare" class="groupBtn">
+                    <view class="v1">继续邀好友组队</view>
+                    <view class="v2">一人抽中,全队中奖</view>
+                </view>
+            </view>
+            <view class="group" wx:else>
+                <button class="btn1">等待开奖</button>
+            </view>
+        </block>
+    </block>
+    <view class="groupadd" wx:if="{{info.group.apply_num>0}}">
+        <view class="groupfull" wx:if="{{info.group.apply_num>=info.max_group_num}}">
+            <text class="icon">i</text>组队人数已满</view>
+        <view class="groupnum">
+            <view class="groupv1">
+          已有
+          <text>{{info.group.apply_num}}</text>人组队 最多{{info.max_group_num}}人
+        </view>
+            <view class="grouplist">
+                <image src="{{item.user_img}}" wx:for="{{info.group.apply}}"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="havepart" wx:if="{{info.status==0}}">
+    <view class="havenum" wx:if="{{info.apply_num==0}}">暂无人员参加。</view>
+    <view class="havenum" wx:else>
+    已有
+    <text>{{info.apply_num}}</text>人参加
+  </view>
+    <view class="partImg">
+        <image src="{{item.user_img}}" wx:for="{{info.apply}}" wx:key="key"></image>
+    </view>
+    <view bindtap="more" class="havenum" style="margin-top:20rpx;" wx:if="{{info.apply_num>0}}">查看所有>></view>
+</view>
+<view class="explain" wx:if="{{info.description!=''}}">
+    <view class="explainTitle">了解更多</view>
+    <view class="explaincs" wx:if="{{info.desc_type==0}}">{{info.description}}</view>
+    <view class="explaincs" wx:if="{{info.desc_type==1}}">
+        <image mode="widthFix" src="{{item}}" style="width:100%;" wx:for="{{info.description}}"></image>
+    </view>
+</view>
+<view class="explain2" wx:if="{{info.description!=''&&info.desc_type==0}}">
+    <view class="mode" style="height:100rpx;background-color:#EEF5EE;font-size:28rpx;" wx:if="{{info.wechat_no!=''}}">
+        <view class="sponsor">此奖品由
+      <text>{{info.wechat_no}}</text>赞助</view>
+        <view bindtap="copy" class="copyname" data-name="{{info.wechat_no}}">
+            <image src="../../images/copy.png"></image>
+            <text>复制公众号</text>
+        </view>
+    </view>
+    <view bindtap="jump" class="mode" style="height:100rpx;background-color:#EEF5EE;font-size:28rpx;" wx:if="{{info.jump_info!=''}}">
+        <view class="sponsor">此奖品赞助商</view>
+        <view class="jump">
+            <text>点此进人{{info.jump_info.app_name}}</text>
+            <image src="../../images/xcxlogo.png"></image>
+            <text class="next"></text>
+        </view>
+    </view>
+</view>
+<view class="advert">
+  <!-- {{advertisement}} -->
+  <ad class="advert-las" unit-id="adunit-bb3aab0243ca9304"></ad>
+  </view>
+<view style="height:140rpx;"></view>
+<view class="footer">
+    <form bindsubmit="lottery" class="footerLeft" reportSubmit="true" wx:if="{{info.status==0&&info.apply_num>0&&info.type==3&&info.is_mine}}">
+        <button formType="submit">开奖</button>
+    </form>
+    <view bindtap="goindex" class="footerLeft" wx:if="{{!info.is_mine}}">查看更多奖品</view>
+    <form bindsubmit="Invitation" class="invitation" reportSubmit="true">
+        <button formType="submit">邀请好友参与</button>
+    </form>
+</view>
+<view bindtap="cancelLayer" class="layer" hidden="{{shareLayer}}">
+    <view class="shareLayer">
+        <form class="shareLi" reportSubmit="true">
+            <button formType="submit" openType="share">邀请好友参与</button>
+        </form>
+        <form bindsubmit="shareImg" class="shareLi" reportSubmit="true">
+            <button formType="submit">生成分享图</button>
+        </form>
+        <form bindsubmit="embed" class="shareLi" reportSubmit="true">
+            <button formType="submit">嵌入到公众号文章</button>
+        </form>
+        <view bindtap="cancelLayer" class="shareLi" style="color:#B3B3B3;">取消</view>
+    </view>
+</view>
+<view bindtap="layerhidden" class="layer" hidden="{{layer}}" wx:if="{{state==3&&layerones}}">
+    <view class="layerWrap">
+        <view bindtap="layerhidden" class="layerclose"></view>
+        <image class="headimg" src="../../images/winnlayer.png"></image>
+        <view class="layermsg">
+            <image src="{{info.imgurl}}"></image>
+            <view wx:if="{{info.my_in_prize.type=='fir'}}">
+                <view class="namesa" wx:if="{{info.fir_ptype==0}}">一等奖：奖品{{info.fir_val}}</view>
+                <view class="namesa" wx:elif="{{info.fir_ptype==1}}">一等奖：{{info.fir_val}}元</view>
+                <view class="namesa" wx:else>{{info.fir_cname}}</view>
+            </view>
+            <view wx:elif="{{info.my_in_prize.type=='sec'}}">
+                <view class="namesa" wx:if="{{info.sec_ptype==0}}">二等奖：奖品{{info.sec_val}}</view>
+                <view class="namesa" wx:elif="{{info.sec_ptype==1}}">二等奖：{{info.sec_val}}元</view>
+                <view class="namesa" wx:else>{{info.sec_cname}}</view>
+            </view>
+            <view wx:elif="{{info.my_in_prize.type=='trd'}}">
+                <view class="namesa" wx:if="{{info.trd_ptype==0}}">三等奖：奖品{{info.trd_val}}</view>
+                <view class="namesa" wx:elif="{{info.trd_ptype==1}}">三等奖：{{info.trd_val}}元</view>
+                <view class="namesa" wx:else>{{info.trd_cname}}</view>
+            </view>
+        </view>
+        <view bindtap="layerhidden" class="layerfoor">查看详情</view>
+        <view bindtap="gofabu" class="layerfoor">我要发奖</view>
+    </view>
+</view>
+<view bindtap="layerhidden" class="layer" hidden="{{layer}}" wx:if="{{state==4&&layerones}}">
+    <view class="layerWrap">
+        <view bindtap="layerhidden" class="layerclose"></view>
+        <image class="headimg" src="../../images/winnlayer2.png"></image>
+        <view class="layermsg">
+            <image src="../../images/nowinnbq.png" style="width:145rpx;height:145rpx;margin:0 auto 40rpx;"></image>
+        </view>
+        <view bindtap="goindex" class="layerfoor">继续抽</view>
+        <view bindtap="gofabu" class="layerfoor">我要发奖</view>
+    </view>
+</view>
+<view hidden="{{!getUserLyaer}}">
+    <view class="layer-getuser"></view>
+    <view class="grant-layer">
+        <view class="layer-title">需要授权获取您的头像</view>
+        <button bindgetuserinfo="getUserInfo" class="getInfo" openType="getUserInfo">确认</button>
+    </view>
+</view>

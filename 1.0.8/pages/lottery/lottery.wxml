@@ -1,0 +1,54 @@
+<view class="head">
+    <view class="prizeMsg">
+        <view class="prizepho">
+            <image src="../../images/default.png"></image>
+            <view class="actName">手工部落十周年活动</view>
+        </view>
+        <view class="prizecs">
+            <view class="prizecof">奖品</view>
+            <view class="prizeLi">
+                <view>琉璃耳环一对<text>*3</text>
+                </view>
+                <view>500现金<text>*3</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="mode">由发起人手动开奖</view>
+<view class="remarks">更多有毁灭互动化深度飞虎队防晒服和和速度回复is都很符合是付的首付</view>
+<view class="winning">
+    <view class="share">
+        <image src="../../images/share.png"></image>
+    </view>
+    <view class="winnIcons">
+        <image src="../../images/winn.png"></image>
+        <text>恭喜您中奖啦！</text>
+    </view>
+    <view class="winnprize">
+        <view class="confione">您获得你由手工部落提供的：</view>
+        <view class="confitwo">DIOR琉璃手环 </view>
+    </view>
+    <view class="address">填写收货地址>></view>
+</view>
+<view class="winning nowinn">
+    <view class="share">
+        <image src="../../images/share.png"></image>
+    </view>
+    <view class="winnIcons">
+        <image src="../../images/nowinn.png"></image>
+        <text style="color:#B3B3B3;text-shadow:none;">很遗憾，您未中奖</text>
+    </view>
+</view>
+<view class="winningList">
+    <view class="winnTilte">中奖名单</view>
+    <view class="winnli" wx:for="{{[0,0,0]}}" wx:key="key">
+        <image src="../../images/act2.png"></image>
+        <view class="nick">某某</view>
+        <view class="prizeName">DIOR琉璃手环</view>
+    </view>
+</view>
+<view class="thankcy">感谢其他<text>432</text>位伙伴的参与</view>
+<view class="footer">
+    <button>发起抽奖</button>
+</view>

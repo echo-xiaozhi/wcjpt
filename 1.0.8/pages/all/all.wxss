@@ -1,0 +1,22 @@
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20rpx;
+    justify-content: center;
+}
+
+.wrap image {
+    width: 80rpx;
+    height: 80rpx;
+    display: block;
+    margin-right: 20rpx;
+    flex-shrink: 0;
+    margin-bottom: 20rpx;
+}
+
+.more {
+    text-align: center;
+    color: #B3B3B3;
+    height: 60rpx;
+    line-height: 60rpx;
+}

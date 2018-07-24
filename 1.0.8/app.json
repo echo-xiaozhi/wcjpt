@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/news/news",
+    "pages/index/index",
+    "pages/history/history",
+    "weather/pages/index/index",
+    "weather/pages/add/add",
+    "weather/pages/logs/logs",
+    "weather/pages/payment/donate",
+    "pages/partake/partake",
+    "pages/address/address",
+    "pages/problem/problem",
+    "pages/lottery/lottery",
+    "pages/questionList/questionList",
+    "pages/withdrawals/withdrawals",
+    "pages/set/set",
+    "pages/all/all",
+    "pages/share/share",
+    "pages/head/head",
+    "pages/shareImg/shareImg",
+    "pages/embed/embed",
+    "pages/my/my",
+    "pages/morexcq/morexcq",
+    "pages/report/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f7f7f7",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  }
+}

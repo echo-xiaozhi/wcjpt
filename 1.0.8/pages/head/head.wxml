@@ -1,0 +1,12 @@
+<template name="tabhead">
+    <view class="tabhead" style="height:{{headheight}}px;">
+        <navigator class="goindex" hoverClass="none" openType="redirect" url="../news/news" wx:if="{{tabhead!='首页'}}">
+            <view>
+                <image src="../../images/home.png" style="width:40rpx;height:40rpx;"></image>
+            </view>
+        </navigator>
+        <view class="text" wx:if="{{headtxt}}">{{headtxt}}</view>
+        <view class="text" wx:else>抽奖小助手</view>
+    </view>
+    <view style="height:{{headheight}}px;"></view>
+</template>
