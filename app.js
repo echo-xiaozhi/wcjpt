@@ -10,15 +10,19 @@ App({
         });
     },
     tabhead: function(t) {
-        wx.getSystemInfo({
-            success: function(e) {
-                -1 < e.model.indexOf("iPhone X") ? t.setData({
-                    headheight: 88
-                }) : t.setData({
-                    headheight: 64
-                });
-            }
-        });
+        // wx.getSystemInfo({
+        //     success: function(e) {
+        //         -1 < e.model.indexOf("iPhone X") ? t.setData({
+        //             headheight: 88
+        //         }) : t.setData({
+        //             headheight: 64
+        //         });
+        //     }
+        // });
+      let heights = wx.getSystemInfoSync().statusBarHeight + 44;
+      t.setData({
+        headheight: heights
+      })
     },
     onLaunch: function(e) {
         if (e) {

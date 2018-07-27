@@ -1,6 +1,0 @@
-<import src="../head/head.wxml"></import>
-<template is="tabhead" data="{{headheight:headheight}}"></template>
-<view class="wrap">
-    <image src="{{item.user_img}}" wx:for="{{info}}"></image>
-</view>
-<view bindtap="more" class="more" wx:if="{{info.length>10}}">加载更多</view>

@@ -28,7 +28,7 @@ Page({
             } ]
         } ],
         conIndex: 0,
-        conArray: [ "人数开奖", "时间开奖", "手动开奖" ],
+        conArray: [ "时间开奖", "人数开奖", "手动开奖" ],
         expIndex: 0,
         explainArray: [ "文字", "图片" ],
         startTime: "请选择时间",
@@ -522,8 +522,8 @@ Page({
                 0 == r[2].prIndex ? t.trd_val = r[2].prize : t.trd_val = r[2].money;
             } else t.trd_num = n.data.trd_num, t.trd_ptype = n.data.trd_ptype, t.trd_val = n.data.trd_val;
             if (n.data.isgroup ? t.max_group_num = n.data.max_group_num : t.max_group_num = 0, 
-            0 == n.data.conIndex) console.log(n.data.awardsNum), t.type = "people", t.typedesc = "达到参与人数自动开奖", 
-            t.typevalue = n.data.awardsNum; else if (1 == n.data.conIndex) {
+            1 == n.data.conIndex) console.log(n.data.awardsNum), t.type = "people", t.typedesc = "达到参与人数自动开奖", 
+            t.typevalue = n.data.awardsNum; else if (0 == n.data.conIndex) {
                 if (t.type = "time", t.typedesc = "达到设定时间自动开奖", "请选择时间" == n.data.startTime) return void tools.showNotice("请选择时间");
                 t.typevalue = n.data.startTime;
             } else t.type = "manual", t.typedesc = "由发起者手动开奖", t.typevalue = "";

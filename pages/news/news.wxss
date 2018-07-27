@@ -67,14 +67,14 @@
 
 .listwrap {
     position: relative;
-    height: 320rpx;
+    height: 350rpx;
     overflow: hidden;
 }
 
 .listwrap image {
     display: block;
     width: 100%;
-    height: 320rpx;
+    height: 350rpx;
     border-top-right-radius: 10rpx;
     border-top-left-radius: 10rpx;
 }

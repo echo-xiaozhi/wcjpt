@@ -1,9 +1,0 @@
-<template name="tabBar">
-    <view class="footerIcon"></view>
-    <view class="tabbar_box">
-        <navigator class="tabbar_nav" hoverClass="none" openType="redirect" style="color:{{item.selected?tabbar.selectedColor:tabbar.color}}" url="{{item.pagePath}}" wx:for="{{tabbar.list}}" wx:key="index">
-            <image class="tabbar_icon" src="{{item.selected?item.selectedIconPath:item.iconPath}}"></image>
-            <text>{{item.text}}</text>
-        </navigator>
-    </view>
-</template>

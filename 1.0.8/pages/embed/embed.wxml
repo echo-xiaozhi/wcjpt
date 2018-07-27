@@ -1,9 +1,0 @@
-<import src="../head/head.wxml"></import>
-<template is="tabhead" data="{{headheight:headheight,headtxt:headtxt}}"></template>
-<view class="wrap">
-    <image class="wrapimg" src="{{url}}"></image>
-</view>
-<view class="copy">
-    <view class="urls">pages/partake/partake?id={{id}}</view>
-    <button bindtap="copy" class="copybtn" data-name="pages/partake/partake?id={{id}}">复制路径</button>
-</view>

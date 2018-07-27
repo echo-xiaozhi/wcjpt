@@ -1,8 +1,0 @@
-<view class="search-box" hidden="true">
-    <input placeholder=""></input>
-</view>
-<text class="paneltitle">城市列表</text>
-<view class="place-box">
-    <text bindtap="chinaTaped" id="{{index}}" wx:for="{{chinaCitys}}" wx:key="unique">{{item.cityzh}}</text>
-    <view style="clear:both"></view>
-</view>
