@@ -70,7 +70,7 @@ App({
             }
             //  查看想要看的奖品
             // , {
-            //   pagePath: "/pages/partake/partake?id=62",
+            //   pagePath: "/pages/partake/partake?id=114",
             //   text: "我的",
             //   iconPath: "../../images/problem.png",
             //   selectedIconPath: "../../images/problemon.png",

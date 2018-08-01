@@ -255,7 +255,7 @@
     <ad class="advert-las" unit-id="adunit-bb3aab0243ca9304"></ad>
     </view>
     <view style="height:80px;"></view>
-    <template is="tabBar" data="{{tabbar:tabbar}}"></template>
+    <!-- <template is="tabBar" data="{{tabbar:tabbar}}"></template> -->
 </view>
 <view bindtap="layerclose" class="layer" hidden="{{!layer}}">
     <view class="layerWrap">
