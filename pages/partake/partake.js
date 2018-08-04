@@ -52,12 +52,18 @@ function actDetail(a) {
         a.setData({
             animationData: a.animation.export()
         })), console.log(a.data.group_code);
+
+        console.log(a.data.info)
     });
 }
 
-function timestampToTime(t) {
-    var e = new Date(1e3 * t);
-    return e.getFullYear() + "-" + ((e.getMonth() + 1 < 10 ? "0" + (e.getMonth() + 1) : e.getMonth() + 1) + "-") + (e.getDate() + " ") + (e.getHours() + ":") + (e.getMinutes() + ":") + (e.getSeconds() < 10 ? "0" + e.getSeconds() : e.getSeconds());
+function timestampToTime(e) {
+  var t = new Date(1e3 * e);
+  return t.getFullYear() + "-" +
+    ((t.getMonth() + 1 < 10 ? "0" + (t.getMonth() + 1) : t.getMonth() + 1)) + "-" +
+    (t.getDate() < 10 ? "0" + t.getDate() : t.getDate()) + " " + (t.getHours() + ":") +
+    (t.getMinutes() < 10 ? "0" + t.getMinutes() : t.getMinutes()) + ":" +
+    (t.getSeconds() < 10 ? "0" + t.getSeconds() : t.getSeconds());
 }
 
 Page({
@@ -266,5 +272,15 @@ Page({
             actDetail(e);
         });
     },
-    goback: tools.goback
+    goback: tools.goback,
+    // 复制公众号
+    copyGzh: function () {
+      let data = this.data.info.wxh_no;
+      wx.setClipboardData({
+        data: data,
+        success: function (res) {
+          console.log(res)
+        }
+      })
+    }
 });

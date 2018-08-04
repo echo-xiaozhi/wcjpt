@@ -41,14 +41,6 @@
       <navigator url="/pages/report/index?id={{id}}" class='ss-gray' hover-class="none">举报</navigator>
     </view>
 </view>
-<view class="mode" wx:if="{{info.wechat_no!=''}}">
-    <view class="sponsor">此奖品由
-    <text>{{info.wechat_no}}</text>赞助</view>
-    <view bindtap="copy" class="copyname" data-name="{{info.wechat_no}}">
-        <image src="../../images/copy.png"></image>
-        <text>复制公众号</text>
-    </view>
-</view>
 <view bindtap="jump" class="mode" wx:if="{{info.jump_info!=''}}">
     <view class="sponsor">此奖品赞助商</view>
     <view class="jump">
@@ -187,6 +179,42 @@
     <text bindtap="all">点击查看>></text>
     </view>
 </view>
+<!-- xz 公众号wechat_no复制开始 -->
+<view class="wxh-main" wx:if="{{info.wechat_no!=''}}">
+    <!-- <view class="sponsor">此奖品由
+    <text>{{info.wechat_no}}</text>赞助</view>
+    <view bindtap="copy" class="copyname" data-name="{{info.wechat_no}}">
+        <image src="../../images/copy.png"></image>
+        <text>复制公众号</text>
+    </view> -->
+    <view class='padd-m'>
+    <view class='color'>
+      {{info.wechatgg_no}}
+    </view>
+    <view class='main'>
+      {{info.wechat_no}}
+    </view>
+    <view class='colorf' bindtap='copy' data-name="{{info.wechat_no}}">
+      点此一键复制公众号
+    </view>
+  </view>
+</view>
+<!-- xz 公众号复制结束 -->
+<!-- ss 微信号复制开始 -->
+<view wx:if = "{{ info.wxh_no }}" class='wxh-main'>
+  <view class='padd-m'>
+    <view class='color'>
+      {{info.wxhgg_no}}
+    </view>
+    <view class='main'>
+      {{info.wxh_no}}
+    </view>
+    <view class='colorf' bindtap='copyGzh'>
+      点此一键复制微信号
+    </view>
+  </view>
+</view>
+<!-- ss 微信号复制结束wxh_no -->
 <view class="partake" wx:if="{{state==1&&info.max_group_num==0}}">
     <form bindsubmit="participate" reportSubmit="true">
         <button formType="submit">参与抽奖</button>

@@ -142,7 +142,7 @@
                     </view>
                     <view bindtap="copyJump" class="fillFlex">
                         <view class="label">
-                            <text>公众号复制/小程序跳转</text>
+                            <text>公众号、微信号复制/小程序跳转</text>
                             <text class="font">(付费功能)</text>
                         </view>
                         <image src="../../images/notselect.png" style="width:40rpx;height:40rpx;" wx:if="{{!iscopyJump}}"></image>
@@ -152,14 +152,32 @@
                         <view class="fillFlex">
                             <view class="label">类型</view>
                             <view class="selectType">
+                                <view bindtap="payswitch" class="typename {{copyorjump==3?'on':''}}" data-id="3">微信号</view>
                                 <view bindtap="payswitch" class="typename {{copyorjump==1?'on':''}}" data-id="1">公众号</view>
                                 <view bindtap="payswitch" class="typename {{copyorjump==2?'on':''}}" data-id="2">小程序</view>
                             </view>
                         </view>
-                        <view class="jumpfill" wx:if="{{copyorjump==1}}">
-                            <view class="label">请填写需复制的公众号/微信号等</view>
-                            <input bindinput="copyInput" placeholder="请填写可复制的名称" placeholderClass="placeholder" type="text"></input>
+                        <view wx:if="{{copyorjump==3}}">
+                          <view class="jumpfill">
+                              <view class="label">填写微信号小广告(最多20字)</view>
+                              <input bindinput="copywxggInput"  maxlength="20" placeholder="比如：喜欢的可以添加店主微信号" placeholderClass="placeholder" type="text"></input>
+                          </view>
+                          <view class="jumpfill">
+                              <view class="label">请填写需复制的微信号</view>
+                              <input bindinput="copywxInput" placeholder="请填写可复制的名称" placeholderClass="placeholder" type="text"></input>
+                          </view>
                         </view>
+                        <view wx:if="{{copyorjump==1}}">
+                          <view class="jumpfill">
+                              <view class="label">填写公众号小广告(最多20字)</view>
+                              <input bindinput="copyggInput"  maxlength="20" placeholder="比如：关注公众号领取更多福利" placeholderClass="placeholder" type="text"></input>
+                          </view>
+                          <view class="jumpfill">
+                            <view class="label">请填写需复制的公众号</view>
+                            <input bindinput="copyInput" placeholder="请填写可复制的名称" placeholderClass="placeholder" type="text"></input>
+                          </view>
+                        </view>
+                       
                         <view wx:if="{{copyorjump==2}}">
                             <view class="jumpfill">
                                 <view class="label">APP ID</view>

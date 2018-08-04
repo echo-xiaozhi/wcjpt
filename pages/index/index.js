@@ -42,6 +42,9 @@ Page({
         // phone: '',
         copyorjump: 1,
         copyname: "",
+        copyggname: "",
+        copywx:"",
+        copygg: "",
         isgroup: !1,
         isindex: !1,
         max_group_num: 0,
@@ -429,6 +432,21 @@ Page({
             copyname: t.detail.value
         });
     },
+    copyggInput: function (t) {
+      this.setData({
+        copyggname: t.detail.value
+      });
+    },
+    copywxInput: function (t) {
+      this.setData({
+        copywx: t.detail.value
+      });
+    },
+    copywxggInput: function (t) {
+      this.setData({
+        copywxgg: t.detail.value
+      });
+    },
     group: function(t) {
         this.data.group ? this.setData({
             group: !1
@@ -499,7 +517,7 @@ Page({
         var s = n.data.jdexplain, i = n.data.remarks, o = n.data.remarksImg;
         o = "," == o.substring(o.length - 1) ? o.substring(0, o.length - 1) : o, t.title = s, 
         0 == n.data.expIndex && (t.desc_type = 0, t.description = i), 1 == n.data.expIndex && (t.desc_type = 1, 
-        t.description = o), t.uname = n.data.business, t.wechat_no = n.data.copyname, console.log("test" + n.data.isjump), 
+            t.description = o), t.uname = n.data.business, t.wechat_no = n.data.copyname, t.wechatgg_no = n.data.copyggname, t.wxh_no = n.data.copywx, t.wxhgg_no = n.data.copywxgg, console.log("test" + n.data.isjump), 
         1 == n.data.isjump && 2 == n.data.copyorjump && (t.appid = n.data.appid, console.log(n.data.appid), 
         t.path = n.data.xcxpath, t.extraData = n.data.params, t.appname = n.data.appname), 
         n.data.iscopyJump || (t.wechat_no = "");

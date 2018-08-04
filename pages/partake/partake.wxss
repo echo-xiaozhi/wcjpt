@@ -55,7 +55,7 @@
 }
 
 .ss-flex .ss-gray{
-  color: #595f6b
+  color: #B3B3B3;
 }
 
 .condition {
@@ -436,3 +436,39 @@
 
 .explainTitle::before,.explainTitle::after {
     content: '\\\\\\\\\\\\\\\\';display:inline-block;opacity:0.3;font-size:22rpx;letter-spacing:6rpx}.explainTitle::before{margin-right:30rpx}.explainTitle::after{margin-left:30rpx}.explaincs{margin-top:40rpx;color:#666666;font-size:32rpx;line-height:50rpx}.footer{display:flex;align-items:center;width:100%;position:fixed;bottom:0;left:0;height:120rpx;box-shadow:0 2rpx 7rpx 0 rgba(0,0,0,0.50);background-color:#FFF;z-index:2}.footer view{width:240rpx;background:#FFFFFF;border-radius:4rpx;height:80rpx;line-height:80rpx;border:1rpx solid #F07575;color:#F07575;font-size:28rpx;text-align:center}.footer .footerLeft{height:80rpx;margin-left:20rpx}.footerLeft button{width:240rpx;background:#FFFFFF;border-radius:4rpx;height:80rpx;line-height:80rpx;border:1px solid #F07575;color:#F07575;font-size:28rpx}.footer .invitation{flex:1;height:84rpx;margin-right:20rpx;margin-left:20rpx}.invitation button{height:84rpx;line-height:84rpx;background:#FE5A50;color:#FFF;font-size:28rpx;border-radius:4rpx}.actCalne{background-color:#FFF;padding:10px;text-align:center;color:#B3B3B3}.winning{background-color:#FFF;text-align:center;padding-top:40rpx;position:relative}.nowinn{padding-bottom:30rpx}.winning .share{position:absolute;top:20rpx;right:20rpx}.share image{width:30rpx;height:34rpx;display:block}.winnIcons{margin-bottom:10px}.winnIcons image{width:127rpx;height:103rpx;display:block;margin:0 auto 30rpx}.winnIcons text{text-shadow:0 1px 2rpx rgba(195,94,94,0.50);font-size:34rpx;color:#FE5A50}.winnprize{padding-top:30rpx;text-align:center;border-top:1px dashed #CCCCCC;margin-top:40rpx}.winnprize .confione{font-size:24rpx;color:#B3B3B3}.confione text{font-weight:bold;margin:0 10rpx}.winnprize .confitwo{font-size:34rpx;color:#333333;margin-top:10rpx;font-weight:bold}.marginBo{padding-bottom:30rpx}.address{height:80rpx;line-height:80rpx;font-size:24rpx;color:#F07575;background-color:#FAFAFA;border-top:1px dashed #CCCCCC}.winningList{margin-top:30rpx;padding:20px 20px 10px;background-color:#FFF;box-shadow:0 1px 6px 0 rgba(149,135,134,0.20)}.winnTilte{width:150px;height:30px;line-height:30px;background-color:#F0F0F0;font-size:15px;color:#9F9494;text-align:center;margin:auto;position:relative;margin-bottom:15px}.winnTilte::before{content:'';display:block;width:0;height:0;border-width:15px;border-style:solid;border-color:transparent #FFF transparent transparent;position:absolute;right:0;top:0}.winnTilte::after{content:'';display:block;width:0;height:0;border-width:15px;border-style:solid;border-color:transparent transparent transparent #FFF;position:absolute;left:0;top:0}.winnli{margin-bottom:20rpx;color:#9F9494;font-size:22rpx}.winnliN1{display:flex;align-items:center}.winnli image{width:50rpx;height:50rpx;border-radius:50%;flex-shrink:0;margin-right:20rpx}.winnliN1 .gropimg{width:30rpx;height:30rpx;border-radius:0;margin-left:20rpx}.winnli .prizeName{margin-left:auto;margin-right:0}.winnliN2{color:#9F9494;margin-top:10rpx}.addreflex{display:flex;align-items:center}.add-flex1{margin-right:20rpx;flex:1}.add-flex2{flex-shrink:0;font-size:28rpx}.add-flex2 image{width:24rpx;height:24rpx;margin-right:10rpx;border-radius:0}.thankcy{background:#FAFAFA;border-radius:0 0 5px 5px;border-top:1px dashed #CCCCCC;height:35px;line-height:35px;text-align:center;font-size:12px;color:#B3B3B3;box-shadow:0 1px 6px 0 rgba(149,135,134,0.20)}.thankcy text{margin:0 6rpx;font-weight:bold}.shareLayer{position:fixed;z-index:999;background-color:#FFF;width:100%;left:0;bottom:0;text-align:center}.shareLi{height:50px;line-height:50px;font-size:16px}.shareLi button{height:50px;line-height:50px;font-size:16px;background-color:#FFF;border-bottom:1px solid #DDD;border-radius:0}.layer{width:100%;height:100%;position:fixed;left:0;bottom:0;z-index:9999;background:rgba(0,0,0,0.30)}.layerWrap{z-index:10000;width:70%;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:10px;text-align:center;padding-top:140rpx}.layerclose{position:absolute;width:40rpx;height:40rpx;border-radius:50%;border:1px solid #EEE;top:-30rpx;right:0;z-index:1}.layerclose::after,.layerclose::before{content:'';display:block;width:26rpx;height:2rpx;background-color:#FFF;position:absolute;left:8rpx;top:20rpx}.layerclose::after{transform:rotate(45deg)}.layerclose::before{transform:rotate(-45deg)}.layerWrap .headimg{width:100%;height:255rpx;display:block;position:absolute;top:-100rpx;left:0}.layermsg{background-color:#FFF;padding:30rpx 80rpx}.layermsg image{width:100%;height:175rpx;display:block}.layermsg .namesa{font-size:28rpx;color:#000000;font-weight:bold;text-align:left;margin-top:10rpx}.layerfoor{margin:50rpx auto 0;background:#EB2B39;width:307rpx;height:88rpx;line-height:88rpx;text-align:center;font-size:32rpx;color:#FFFFFF;border-radius:100rpx}.explain2 .mode{border-top:none}
+
+
+/* ss  微信号 */
+.wxh-main {
+  margin-top: 60rpx;
+  background: #fff;
+  padding: 20rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.wxh-main .padd-m{
+  border: 6rpx solid #e1ddda;
+  padding: 40rpx;
+}
+.wxh-main .color {
+  color: #6f6251;
+}
+.wxh-main .colorf{
+  background: #726249;
+  border-radius: 40rpx;
+  -webkit-border-radius: 40rpx;
+  height:80rpx;
+  line-height:80rpx;
+  color:#fff;
+  width:70%;
+  margin:40rpx auto 0;
+}
+.wxh-main .main {
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #9d9a8b;
+  background-color: #f7f7f5;
+  margin-top: 40rpx;
+  font-weight: 400;
+}
