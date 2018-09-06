@@ -105,9 +105,13 @@ Page({
         };
         tools.requset("?i=" + e.siteInfo.uniacid + "&c=entry&op=receive_card&do=config&m=" + e.modules_name + "&a=wxapp", n, function(t) {
             a.data.red_package_fee = t.info ? t.info : 0;
-        }), getApp().tabhead(a);
-        var s = new Date().getFullYear(), i = dateTimePicker.dateTimePicker(s, this.data.endYear);
+      }), getApp().tabhead(a);
+      var s = new Date(),
+          n = new Date(s);
+      n.setDate(s.getDate() + 6);
+      var i = dateTimePicker.dateTimePicker(s, n);
         i.dateTimeArray.pop(), i.dateTime.pop();
+        i.dateTime[2] = 0;
         this.setData({
             dateTimeArray1: i.dateTimeArray,
             dateTime1: i.dateTime
@@ -352,16 +356,57 @@ Page({
         this.setData({
             dateTime1: t.detail.value,
             startTime: n
-        });
+      });
     },
-    changeDateTimeColumn1: function(t) {
-        var a = this.data.dateTime1, e = this.data.dateTimeArray1;
-        a[t.detail.column] = t.detail.value, e[2] = dateTimePicker.getMonthDay(e[0][a[0]], e[1][a[1]]), 
-        this.setData({
-            dateTimeArray1: e,
+    // changeDateTimeColumn1: function(t) {
+    //     var a = this.data.dateTime1, e = this.data.dateTimeArray1;
+    //     a[t.detail.column] = t.detail.value, 
+    //     // e[2] = dateTimePicker.getMonthDay(e[0][a[0]], e[1][a[1]]), 
+    //     this.setData({
+    //         // dateTimeArray1: e,
+    //         dateTime1: a
+    //     });
+    // },
+    changeDateTimeColumn1: function (t) {
+      var a = this.data.dateTime1, e = this.data.dateTimeArray1;
+      a[t.detail.column] = t.detail.value;
+      // e[2] = dateTimePicker.getMonthDay(e[0][a[0]], e[1][a[1]]),
+      if (e[1].length > 1) {
+        let address = e[2][a[2]], arr = [];
+        if (address > 0 && address < 7) {
+          if (a[1] != 1) {
+            // 提示位置，等级不够
+            // wx.showToast({
+            //   title: '日期必须为7天之内',
+            //   duration: 1000
+            // })
+          }
+          a[1] = 1;
+          this.setData({
             dateTime1: a
+          });
+        } else {
+          if (a[1] != 0) {
+            // 提示位置
+            // wx.showToast({
+            //   title: '日期必须为7天之内',
+            //   duration: 1000
+            // })
+          }
+          a[1] = 0;
+          this.setData({
+            dateTime1: a
+          });
+        }
+      } else {
+        this.setData({
+          // dateTimeArray1: e,
+          dateTime1: a
         });
+      }
     },
+
+
     businessInput: function(t) {
         this.setData({
             business: t.detail.value

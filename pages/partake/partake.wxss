@@ -472,3 +472,64 @@
   margin-top: 40rpx;
   font-weight: 400;
 }
+
+.choujiang-f{
+  border-top: solid #f7f7f5 1rpx;
+  color: #222;
+  font-size:26rpx;
+  padding-top: 12rpx;
+}
+
+.choujiang-f image {
+  width:42rpx;
+  height:42rpx;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  vertical-align:middle;
+  margin-right:17rpx;
+}
+/* 免责声明 */
+.statement {
+  font-size: 12px;
+  text-align: center;
+  color: #B3B3B3;
+  margin-top:30rpx;
+}
+.statement-mian {
+  position:fixed;
+  left:5%;
+  top: 50%;
+  -webkit-transform: translateY(-40%);
+  transform: translateY(-40%);
+  margin:0;
+  width:90%;
+  background:#fff;
+  padding:40rpx;
+  font-size:15px;
+  box-sizing: border-box;
+}
+.statement-mian .title {
+  color: #666666;
+  font-size: 14px;
+  text-align:center;
+  line-height:40rpx;
+}
+.statement-mian .close {
+  position: absolute;
+  right:25rpx;
+  top:4rpx;
+  font-size:23px;
+  color: #666666;
+}
+.statement-mian text{
+  display: block;
+  margin-top:26rpx;
+}
+.statement-bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5)
+}

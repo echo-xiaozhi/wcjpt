@@ -250,7 +250,7 @@
         </view>
         <view class="condflex" wx:if="{{conIndex==0}}">
             <view class="label">开奖时间</view>
-            <picker bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" mode="multiSelector" range="{{dateTimeArray1}}" value="{{dateTime1}}">
+            <picker bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1"  mode="multiSelector" range="{{dateTimeArray1}}" value="{{dateTime1}}">
                 <view class="tui-picker-detail">{{startTime}}</view>
             </picker>
         </view>

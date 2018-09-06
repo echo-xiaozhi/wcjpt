@@ -22,6 +22,7 @@ function actDetail(a) {
     e.id = a.data.id, a.data.group_code && (e.group_code = a.data.group_code);
     var o = getApp();
     tools.requset("?i=" + o.siteInfo.uniacid + "&c=entry&op=receive_card&do=details&m=" + o.modules_name + "&a=wxapp", e, function(t) {
+      console.log(t)
         var e = t.info;
         0 < e.max_group_num && e.group && (a.data.group_code = e.group.id, a.setData({
             group_code: e.group.id
@@ -71,7 +72,8 @@ Page({
         unitid: tools.unitid,
         shareLayer: !0,
         animationData: {},
-        group_code: ""
+        group_code: "",
+        statementShow: false //免责声明
     },
     onLoad: function(t) {
         var e = this;
@@ -282,5 +284,11 @@ Page({
           console.log(res)
         }
       })
-    }
+    },
+    // 免责声明
+  statementS: function () {
+    this.setData({
+      statementShow: !this.data.statementShow
+    })
+  }
 });

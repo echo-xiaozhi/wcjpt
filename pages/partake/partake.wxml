@@ -40,6 +40,13 @@
       <view class="condition" wx:else>由发起者手动开奖</view>
       <navigator url="/pages/report/index?id={{id}}" class='ss-gray' hover-class="none">举报</navigator>
     </view>
+    <view class='ss-flex choujiang-f' wx:if="{{info.username}}">
+      <view>抽奖发起人</view>
+      <view>
+        <image src="{{info.user_img}}"></image>
+        <text>{{info.username}}</text>
+      </view>
+    </view>
 </view>
 <view bindtap="jump" class="mode" wx:if="{{info.jump_info!=''}}">
     <view class="sponsor">此奖品赞助商</view>
@@ -179,6 +186,16 @@
     <text bindtap="all">点击查看>></text>
     </view>
 </view>
+<!-- 免责声明开始 -->
+<view class="statement" bindtap='statementS'>点此查看免责声明 ></view>
+<view class="statement-bg" wx:if="{{statementShow}}"></view>
+<view class="statement-mian" wx:if="{{statementShow}}">
+  <view class='close' bindtap='statementS'>x</view>
+  <view class='title'>免责声明 </view>
+  <text>微抽奖平台作为提供及参与抽奖的平台，不对第三方发起人行为承担责任，活动奖品均由发起者提供并发放；</text>
+  <text>微抽奖平台会在法律范围内尽可能的规范、督促用户遵守相关法律和平台使用规则，营造良好的平台使用环境，感谢您的支持。</text>
+</view>
+<!-- 免责声明结束 -->
 <!-- xz 公众号wechat_no复制开始 -->
 <view class="wxh-main" wx:if="{{info.wechat_no!=''}}">
     <!-- <view class="sponsor">此奖品由
