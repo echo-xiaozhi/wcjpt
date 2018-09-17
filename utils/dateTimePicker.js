@@ -51,10 +51,41 @@ function getNewDateArry() {
     return [ withData(t.getFullYear()), withData(t.getMonth() + 1), withData(t.getDate()), withData(t.getHours()), withData(t.getMinutes()), withData(t.getSeconds()) ];
 }
 
+function fun_date(aa) {
+  var date1 = new Date(),
+    time1 = date1.getFullYear() + "-" + (date1.getMonth() + 1) + "-" + date1.getDate();
+  var date2 = new Date(date1);
+    date2.setDate(date1.getDate() + aa);
+  var time2 = date2.getDate();
+  // var aa = [];
+  // aa.push(time2)
+  // console.log(aa)
+  return time2
+}
+
 function dateTimePicker(t, e, a) {
-    var r = [], o = [ [], [], [], [], [], [] ], n = t || 1978, i = e || 2100, s = a ? [].concat(_toConsumableArray(a.split(" ")[0].split("-")), _toConsumableArray(a.split(" ")[1].split(":"))) : getNewDateArry();
-    return o[0] = getLoopArray(n, i), o[1] = getLoopArray(1, 12), o[2] = getMonthDay(s[0], s[1]), 
-    o[3] = getLoopArray(0, 23), o[4] = getLoopArray(0, 59), o[5] = getLoopArray(0, 59), 
+    var r = [], o = [ [], [], [], [], [], [] ], 
+        n = t.getFullYear() || 1978,
+        i = e.getFullYear() || 2100,
+        Mn = t.getMonth() + 1,
+        Mi = e.getMonth() + 1,
+        Dn = t.getDate(),
+        Di = e.getDate(),
+        s = a ? [].concat(_toConsumableArray(a.split(" ")[0].split("-")), _toConsumableArray(a.split(" ")[1].split(":"))) : getNewDateArry();
+    let DayTime = [];
+  for (let i = 0; i <= 6; i++) {
+      var date1 = t,
+      time1 = date1.getFullYear() + "-" + (date1.getMonth() + 1) + "-" + date1.getDate();
+      var date2 = new Date(date1);
+        date2.setDate(date1.getDate() + i);
+      var time2 = date2.getDate()
+        DayTime.push(time2)
+    }
+     return o[0] = getLoopArray(n, i), 
+            o[1] = getLoopArray(Mn, Mi),
+            o[2] = DayTime,
+            o[3] = getLoopArray(0, 23), 
+            o[4] = getLoopArray(0, 59),
     o.forEach(function(t, e) {
         r.push(t.indexOf(s[e]));
     }), {

@@ -262,7 +262,7 @@
             <button openType="contact">联系客服</button>
         </view>
         <view class="contactUss">
-          <view>客服如果不能及时回复，请添加微信：164466159或507517200</view>
+          <view>客服如果不能及时回复，请添加微信：xyingaqing或507517200</view>
         </view>
         <form bindsubmit="submit" reportSubmit="true">
             <button class="submit" disabled="{{btndisable}}" formType="submit">发起抽奖</button>
